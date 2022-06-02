@@ -1,0 +1,460 @@
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}Ориентир | О фонде{% endblock %}
+{% block content %}
+<hr>
+<div class="push30"></div>
+{% if about.content1 %}
+    <!--section class="about-part about-part-one"  style="background-image: url({{ about.image1.url }});"> <!--Хз, как прописывать путь до картинок в атриботу стилей, но оставлю пока так>
+        <div class="container">
+            <div class="about-part-inner">
+                <div class="content">
+                    {{ about.content1 | safe }} <!--цк едитор тут для того, чтобы можно было ентерами отделять куски текста друг от друга>
+                </div>
+                <div class="about-image">
+                    <img src="{{ about.image1.url }}" alt=""> <!--Картинка для первой секции страницы>
+                </div>
+            </div>
+        </div>
+    </section-->
+{% endif %}
+<section class="about-part about-part-one"  style="background-image: url({{ about.image1.url }});"> <!--Хз, как прописывать путь до картинок в атриботу стилей, но оставлю пока так-->
+    <div class="container">
+        <div class="about-part-inner">
+            <div>
+                <h1>Об организации</h1>                
+            </div>
+            <div class="content">
+                <div class="about-image">
+                    <img src="{% static 'rapir/images/about-two.jpg' %}" alt=""> <!--Картинка для первой секции страницы-->
+                </div>
+                <p>Равным образом, высокотехнологичная концепция общественного уклада требует определения и уточнения экспериментов, поражающих по своей масштабности и грандиозности. Внезапно, непосредственные участники технического прогресса, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут описаны максимально подробно. Прежде всего, понимание сути ресурсосберегающих технологий, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для форм воздействия. В рамках спецификации современных стандартов, непосредственные участники технического прогресса, вне зависимости от их уровня, должны быть в равной степени предоставлены сами себе.</p>
+                <p>Тщательные исследования конкурентов представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть объявлены нарушающими общечеловеческие нормы этики и морали. Мы вынуждены отталкиваться от того, что высокое качество позиционных исследований говорит о возможностях как самодостаточных, так и внешне зависимых концептуальных решений. Современные технологии достигли такого уровня, что внедрение современных методик предопределяет высокую востребованность соответствующих условий активизации. Таким образом, сложившаяся структура организации прекрасно подходит для реализации форм воздействия. Лишь непосредственные участники технического прогресса будут ограничены исключительно образом мышления. Задача организации, в особенности же семантический разбор внешних противодействий, в своём классическом представлении, допускает внедрение переосмысления внешнеэкономических политик.  </p>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="participant-page">
+    <section class="participant-section">
+        <div class="push50"></div>
+        <div class="container">
+            <div class="participant-wrapper">
+                <div class="participant-header">
+                    <div class="text-header">
+                        <h2>Наши награды и сертификаты</h2>
+                        <div class="push20"></div>
+                    </div>
+                    <hr>
+                    <div class="push30"></div>
+                    <div class="subtitle">
+                        <p>
+                            Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                        </p>
+                    </div>
+                    <div class="push50"></div>
+                </div>
+                <div class="prize-wrap hidden-xs">
+                    <!--=======================Participants item begin=======================-->
+                    {% for picture in gallery %}
+                    <!---div class="gallery-element">
+                        <a href="{{ picture.image.url }}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение->
+                            <img src="{{ picture.image.url }}"> <!--Большое изображение>
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div-->
+				    {% endfor %}
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-1.png' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-2.jpg' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-2.jpg' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-1.png' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-2.jpg' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-2.jpg' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-1.png' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-1.png' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-1.png' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-2.jpg' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-2.jpg' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-1.png' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-2.jpg' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-2.jpg' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-1.png' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-1.png' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <!--=======================Participants item end=======================-->
+                </div>
+                <div class="prize-wrap-slider visible-xs">
+                    <!--=======================Participants item begin=======================-->
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-1.png' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-2.jpg' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-2.jpg' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-1.png' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-2.jpg' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-2.jpg' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-1.png' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-1.png' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-1.png' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-2.jpg' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-2.jpg' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-1.png' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-2.jpg' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-2.jpg' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-1.png' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'rapir/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+                            <img src="{% static 'rapir/images/prize-1.png' %}"> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <!--=======================Participants item end=======================-->
+                </div>
+            </div>
+        </div>
+        <div class="push50"></div>
+    </section>
+</div>
+    {% if about.content3 %}
+        <!--section class="about-part about-part-three" style="background-image: url({{ about.image3.url }});"><!--Картинка для третьей секции страницы>
+            <div class="push40 hidden-sm hidden-xs"></div>
+            <div class="container">
+                <div class="about-part-inner">
+                    <div class="content">
+                        {{ about.content3 | safe }}   <!--цк едитор тут для того, чтобы можно было ентерами отделять куски текста друг от друга->
+                    </div>
+                    <div class="about-image">
+                        <img src="{{ about.image3.url }}" alt=""> <!--Картинка для третьей секции страницы->
+                    </div>
+                </div>
+            </div>
+            <div class="push40 hidden-sm hidden-xs"></div>
+    </section-->
+{% endif %}
+<section class="about-part about-part-three" style="background-image: url({{ about.image3.url }});"><!--Картинка для третьей секции страницы-->
+    <div class="push20 hidden-sm hidden-xs"></div>
+    <div class="container">
+        <div class="about-part-inner about-part-inner-two">
+            <div class="content">
+                <p>Тщательные исследования конкурентов представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть объявлены нарушающими общечеловеческие нормы этики и морали. Мы вынуждены отталкиваться от того, что высокое качество позиционных исследований говорит о возможностях как самодостаточных, так и внешне зависимых концептуальных решений. Современные технологии достигли такого уровня, что внедрение современных методик предопределяет высокую востребованность соответствующих условий активизации. Таким образом, сложившаяся структура организации прекрасно подходит для реализации форм воздействия. Лишь непосредственные участники технического прогресса будут ограничены исключительно образом мышления. Задача организации, в особенности же семантический разбор внешних противодействий, в своём классическом представлении, допускает внедрение переосмысления внешнеэкономических политик.</p>   <!--цк едитор тут для того, чтобы можно было ентерами отделять куски текста друг от друга-->
+            </div>
+        </div>
+    </div>
+    <div class="push40 hidden-sm hidden-xs"></div>
+</section>
+<div class="push50 visible-sm visible-xs"></div>
+<section class="num-section">
+    <div class="text-header">
+    	<div class="push50"></div>
+    	<h2>О нашей организации в цифрах</h2>
+    	<div class="push50"></div>
+    </div>
+    <div class="num-inner">
+        <div class="num-item">
+            <div class="element">
+            	<div class="img-wrap">
+            		<img src="{% static 'rapir/images/icons/icon1.png' %}" alt="">
+            	</div>
+                <div class="title-wrap">
+                	проектов было<br>реализовано нашим<br>центром
+                </div>
+                <div class="num num1"><span id="num1">0</span> </div>
+            </div>
+        </div>
+        <div class="num-item">
+            <div class="element">
+                <div class="img-wrap">
+            		<img src="{% static 'rapir/images/icons/icon2.png' %}" alt="">
+            	</div>
+                <div class="title-wrap">
+                	человек принимают<br>участие в деятельности<br>Ориентир-центра
+                </div>
+                <div class="num num2"><span id="num2">0</span> </div>
+            </div>
+        </div>
+        <div class="num-item">
+            <div class="element">
+                <div class="img-wrap">
+            		<img src="{% static 'rapir/images/icons/icon3.png' %}" alt="">
+            	</div>
+                <div class="title-wrap">
+                	лет мы уже<br>осуществляем свою<br>работу
+                </div>
+                <div class="num num3"><span id="num3">0</span> </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="participant-section">
+	<div class="push50"></div>
+	<div class="container">
+		<div class="participant-wrapper">
+			<div class="participant-header">
+				<div class="text-header">
+					<h2>Специалисты и эксперты центра</h2>
+					<div class="push20"></div>
+				</div>
+				<hr>
+				<div class="push30"></div>
+				<div class="subtitle">
+					<p>
+						Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+					</p>
+				</div>
+				<div class="push15"></div>
+				<a class="button visible-lg visible-md" href="{% url 'structure' 'e' %}">Смотреть все</a>
+			</div>
+			<div class="participant-slider">
+				<!--=======================Participants item begin=======================-->
+				{% for expert in experts %}
+                    <!--div class="experts-item">
+                        <div class="expert-inner">
+                            <a href="{% url 'expert' expert.id %}" class="link-block"></a>
+                            <div class="image-wrapper">
+                                {% if expert.avatar %}
+                                    <img src="{{ expert.avatar.url }}" alt="expert"/>
+                                {% else %}
+                                    <img src="{% static 'rapir/images/empty.png' %}" alt="expert">
+                                {% endif %}
+                            </div>
+                            <div class="experts-text">
+                                <div class="title-wrapper">
+                                    {{ expert.name }}
+                                </div>
+                                <div class="push10"></div>
+                                <div class="description-wrapper">
+                                    {{ expert.description }}
+                                </div>
+                            </div>
+                        </div>
+                    </div-->
+                {% endfor %}
+				<div class="experts-item">
+					<div class="expert-inner">
+						<div class="image-wrapper">
+							<img src="{% static 'rapir/images/ph1.jpg' %}" alt="expert"/>
+						</div>
+						<div class="experts-text">
+							<div class="title-wrapper">
+								Баханова Елена Викторовна
+							</div>
+							<div class="push10"></div>
+							<div class="description-wrapper">
+								психолог, кандидат социологических наук, докторант, имеет более 60 публикаций и учебных пособий, в том числе 3 монографии
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="experts-item">
+					<div class="expert-inner">
+						<div class="image-wrapper">
+							<img src="{% static 'rapir/images/ph1.jpg' %}" alt="expert"/>
+						</div>
+						<div class="experts-text">
+							<div class="title-wrapper">
+								Башарина Алла Викторовна
+							</div>
+							<div class="push10"></div>
+							<div class="description-wrapper">
+								Кандидат социологических наук, магистр юриспруденции
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="experts-item">
+					<div class="expert-inner">
+						<div class="image-wrapper">
+							<img src="{% static 'rapir/images/ph1.jpg' %}" alt="expert"/>
+						</div>
+						<div class="experts-text">
+							<div class="title-wrapper">
+								Игонина Наталья Валентиновна
+							</div>
+							<div class="push10"></div>
+							<div class="description-wrapper">
+								Директор Медицинского центра "Медсовет", диетолог, специалист по ведению здорового образа жизни
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="experts-item">
+					<div class="expert-inner">
+						<div class="image-wrapper">
+							<img src="{% static 'rapir/images/ph1.jpg' %}" alt="expert"/>
+						</div>
+						<div class="experts-text">
+							<div class="title-wrapper">
+								Сибагатулина Елена Ивановна
+							</div>
+							<div class="push10"></div>
+							<div class="description-wrapper">
+								председатель Ульяновское региональное отделение общероссийской общественной организации «Российский Красный Крест»
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!--=======================Participants item end=======================-->
+			</div>
+			<div class="button-wrap hidden-lg hidden-md">
+				<a class="button" href="{% url 'structure' 'e' %}">Смотреть все</a>
+			</div>
+		</div>
+	</div>
+	<div class="push70"></div>
+</section>
+{% endblock %}

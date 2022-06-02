@@ -1,0 +1,205 @@
+
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}Ориентир | Новости{% endblock %}
+{% block content %}
+<section class="news-section">
+	<hr>
+	<div class="container">
+		<div class="push40"></div>
+		<div class="news-header">
+			<div class="news-header-inner">
+				<div class="sub">Будьте в курсе событий!</div>
+				<h2>Новости</h2>
+				<div class="push10"></div>
+					<div class="header-search">
+						<form data-key="" action="" method="get" id="">
+							<input type="text" placeholder="Поиск по новостям" name="" value="" />
+							<input type="submit" />
+						</form>
+					</div>
+					<div class="push25"></div>
+			</div>
+			<a href="{% url 'news' %}" class="button">Смотреть все</a>
+		</div>
+		<div class="push20"></div>
+		<div class="news-wrapper">
+			{% for new in last_news %}
+			<!--div class="news-item">
+				<a class="link-block" href="{% url 'new' new.slug %}"></a>
+				<div class="news-img-wrap">
+					{% if new.image %}
+						<img src="{{ new.image.url }}" alt="new">
+					{% else %}
+						<img src="{% static 'rapir/images/empty-news.jpg' %}" alt="new">
+					{% endif %}
+				</div>
+				<div class="news-text">
+					<div class="news-date">
+						<i class="fa fa-calendar-o" aria-hidden="true"></i>
+						{{ new.published|date:"d.m.Y" }}
+					</div>
+					<div class="news-text-inner">
+						<div class="news-inner">
+							<div class="news-title">
+								{{ new.title }}
+							</div>
+							<a class="" href="{% url 'new' new.slug %}">Читать далее <span>>></span></a>
+						</div>
+						<div class="annotation">
+							<div class="padding"></div>
+							{{ new.mini_content }}
+						</div>
+					</div>
+				</div>
+			</div-->
+			{% endfor %}
+			<div class="news-item">
+				<a class="link-block" href="#"></a>
+				<div class="news-img-wrap">
+					<img src="{% static 'rapir/images/image-header.jpg' %}" alt="new">
+				</div>
+				<div class="news-text">
+					<div class="news-date">
+						<i class="fa fa-calendar-o" aria-hidden="true"></i>
+						10.02.22
+					</div>
+					<div class="news-text-inner">
+						<div class="news-inner">
+							<div class="news-title">
+								How to make your website
+							</div>
+							<a class="" href="#">Читать далее <span>>></span></a>
+						</div>
+						<div class="annotation">
+							<div class="padding"></div>
+							Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="news-item">
+				<a class="link-block" href="#"></a>
+				<div class="news-img-wrap">
+					<img src="{% static 'rapir/images/image-header.jpg' %}" alt="new">
+				</div>
+				<div class="news-text">
+					<div class="news-date">
+						<i class="fa fa-calendar-o" aria-hidden="true"></i>
+						10.02.22
+					</div>
+					<div class="news-text-inner">
+						<div class="news-inner">
+							<div class="news-title">
+								How to make your website on android How to  make your website
+							</div>
+							<a class="" href="#">Читать далее <span>>></span></a>
+						</div>
+						<div class="annotation">
+							<div class="padding"></div>
+							Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="news-item">
+				<a class="link-block" href="#"></a>
+				<div class="news-img-wrap">
+					<img src="{% static 'rapir/images/image-header.jpg' %}" alt="new">
+				</div>
+				<div class="news-text">
+					<div class="news-date">
+						<i class="fa fa-calendar-o" aria-hidden="true"></i>
+						10.02.22
+					</div>
+					<div class="news-text-inner">
+						<div class="news-inner">
+							<div class="news-title">
+								How to make your website on android
+							</div>
+							<a class="" href="#">Читать далее <span>>></span></a>
+						</div>
+						<div class="annotation">
+							<div class="padding"></div>
+							Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="news-item">
+				<a class="link-block" href="#"></a>
+				<div class="news-img-wrap">
+					<img src="{% static 'rapir/images/image-header.jpg' %}" alt="new">
+				</div>
+				<div class="news-text">
+					<div class="news-date">
+						<i class="fa fa-calendar-o" aria-hidden="true"></i>
+						10.02.22
+					</div>
+					<div class="news-text-inner">
+						<div class="news-inner">
+							<div class="news-title">
+								How to make your website on android How to  make your website
+							</div>
+							<a class="" href="#">Читать далее <span>>></span></a>
+						</div>
+						<div class="annotation">
+							<div class="padding"></div>
+							Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="news-item">
+				<a class="link-block" href="#"></a>
+				<div class="news-img-wrap">
+					<img src="{% static 'rapir/images/image-header.jpg' %}" alt="new">
+				</div>
+				<div class="news-text">
+					<div class="news-date">
+						<i class="fa fa-calendar-o" aria-hidden="true"></i>
+						10.02.22
+					</div>
+					<div class="news-text-inner">
+						<div class="news-inner">
+							<div class="news-title">
+								How to make your website on android
+							</div>
+							<a class="" href="#">Читать далее <span>>></span></a>
+						</div>
+						<div class="annotation">
+							<div class="padding"></div>
+							Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="news-item">
+				<a class="link-block" href="#"></a>
+				<div class="news-img-wrap">
+					<img src="{% static 'rapir/images/image-header.jpg' %}" alt="new">
+				</div>
+				<div class="news-text">
+					<div class="news-date">
+						<i class="fa fa-calendar-o" aria-hidden="true"></i>
+						10.02.22
+					</div>
+					<div class="news-text-inner">
+						<div class="news-inner">
+							<div class="news-title">
+								How to make your website on android
+							</div>
+							<a class="" href="#">Читать далее <span>>></span></a>
+						</div>
+						<div class="annotation">
+							<div class="padding"></div>
+							Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+						</div>
+					</div>
+				</div>
+			</div>
+			{% include 'rapir/pagination.html' %}
+			<div class="push50"></div>
+	</div>
+</section>
+{% endblock %}

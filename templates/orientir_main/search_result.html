@@ -1,0 +1,32 @@
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}Ориентир | Результаты поиска{% endblock %}
+{% block content %}
+<hr>
+<section class="search-section search-result-section">
+    <div class="container">
+        <div class="push50"></div>
+        <h1>Результаты поиска</h1>
+        <div class="push20"></div>
+        <div class="search-wrapper">
+            {% block page %}
+                {% if object_list %}
+                    {% for object in object_list %}
+                        <a class="search-item" href="{{ object.get_absolute_url }}">
+                            <h3>{{ object.title }}</h3>
+                            {{ object.content|safe }}
+                            <div class="btn btn-default btn-sm linkmore">Читать далее <span>>></span></div>
+                        </a>
+                    {% endfor %}
+        
+                    {% include 'rapir/pagination.html' %}
+                    <div class="push100"></div>
+                {% else %}
+                    <p class="notfound">Не найдено публикаций по вашему запросу<br>Попробуйте повторить запрос с другой формулировкой</p>
+                {% endif %}
+            {% endblock %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}Ориентир | {{ gallery.title }}{% endblock %}
+{% block content %}
+<hr>
+<section class="gallery-section">
+	<div class="container">
+		<div class="push50"></div>
+		<h1>{{ album.title }}</h1>
+		<div class="push20"></div>
+            <div class="gallery">
+				{% for picture in gallery %}
+				<-div class="gallery-element">
+					<a href="{{ picture.image.url }}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+						<img src="{{ picture.image.url }}"> <!--Большое изображение-->
+						<div class="zoom-gallery">
+							<i class="fa fa-search-plus" aria-hidden="true"></i>
+						</div>
+					</a>
+				</div>
+				{% endfor %}
+			</div>
+
+		<div class="push50"></div>
+	</div>
+</section>
+
+{% endblock %}
+

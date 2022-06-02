@@ -1,0 +1,33 @@
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}РАПИР | Мы в СМИ{% endblock %}
+{% block content %}
+
+<section class="mass-media-section">
+	<div class="container">
+		<div class="push50"></div>
+		<h2>Мы в СМИ</h2>
+		<div class="push20"></div>
+		<div class="mass-media-wrapper">
+			{% for mm in smi_list %}
+			<div class="mass-media-item">
+				<a class="link-block" href="{{ mm.link }}" target="_blank"></a>
+				<div class="mass-media-text">
+					<div class="mass-media-title">
+						{{ mm.title }}
+					</div>
+					<div class="mass-media-annotation">
+						{{ mm.content }}
+					</div>
+				</div>
+				<a class="readmore" href="{{ mm.link }}">Подробнее <span>>></span></a>
+			</div>
+			{% endfor %}
+		</div>
+        {% include 'rapir/pagination.html' %}
+		<div class="push50"></div>
+	</div>
+</section>
+
+{% endblock %}
+

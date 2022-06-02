@@ -1,0 +1,33 @@
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}РАПИР | Исследования{% endblock %}
+{% block content %}
+
+<section class="searches-section">
+	<div class="container">
+		<div class="push50"></div>
+		<h1>Исследования</h1>
+		<div class="push50"></div>
+		<div class="searches-wrapper section-item-wrapper">
+			{% for search in exploration_list %}
+			<a href="{{ search.get_absolute_url }}" class="section-item">
+                <div class="image-wrap">
+                    {% if search.image %}
+					    <img src="{{ search.image.url }}" alt="">
+                    {% else %}
+                        <img src="{% static 'rapir/images/empty.png' %}" alt="new">
+                    {% endif %}
+                </div>
+                <div class="title-wrap">
+                    {{ search.title }}
+                </div>
+            </a>
+            {% endfor %}
+		</div>
+        {% include 'rapir/pagination.html' %}
+		<div class="push100"></div>
+	</div>
+</section>
+
+{% endblock %}
+

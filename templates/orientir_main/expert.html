@@ -1,0 +1,29 @@
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}РАПИР | {{ expert.title }}{% endblock %}
+{% block content %}
+        <div class="about-exp-wrapper">
+            <div class="container">
+                <div class="push50"></div>
+
+                <div class="about-exp-inner">
+                    <div class="about-exp-image visible-xs">
+                        {% if expert.image %}
+                            <img src="{{ expert.avatar.url }}" alt="Эксперт"/>
+                        {% endif %}
+                    </div>
+                    <div class="about-exp-text ">
+                        <div class="about-exp-image hidden-xs">
+                            {% if expert.image %}
+                                <img src="{{ expert.avatar.url }}" alt="Эксперт"/>
+                            {% endif %}
+                        </div>
+                        <h1>{{ expert.title }}</h1>
+                        <h2>{{ expert.content }}</h2>
+                        <p>{{ expert.description | safe }}</p>
+                    </div>
+                </div>
+                <div class="push50"></div>
+            </div>
+        </div>
+{% endblock %}

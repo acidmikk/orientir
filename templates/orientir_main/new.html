@@ -1,0 +1,43 @@
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}Ориентир | {{ new.title }}{% endblock %}
+{% block content %}
+<hr>
+<section class="news-page-section">
+	<div class="container">
+		<div class="news-page-wrapper">
+			<div class="push50"></div>
+			<div class="news-img visible-lg visible-md">
+                {% if new.image %}
+				    <img src="{{ new.image.url }}" alt="new">
+                {% endif %}
+			</div>
+			<h1>{{ new.title }}</h1>
+			<div class="push20"></div>
+			<h4>{{ new.published|date:"d.m.Y" }}</h4>
+			<div class="push20"></div>
+			<h3>{{ new.mini_content }}</h3>
+			<div class="push20"></div>
+			<div class="news-img hidden-lg hidden-md">
+				{% if new.image %}
+				    <img src="{{ new.image.url }}" alt="new">
+                {% endif %}
+			</div>
+			<div class="content">
+				<p>{{ new.content | safe }}</p>
+            </div>
+			<div class="push20"></div>
+            {% if new.file %}
+                <iframe id="pres" src="{{ new.file.url }}"></iframe>
+            {% endif %}
+			<div class="push50"></div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+
+
+
+
+

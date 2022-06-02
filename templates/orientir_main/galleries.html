@@ -1,0 +1,95 @@
+
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}Ориентир | Портфолио{% endblock %}
+{% block content %}
+<section class="project-section">
+    <hr>
+    <div class="push40"></div>
+	<div class="container">
+		<div class="project-wrapper">
+			<div class="content">
+				<div class="project-header">
+					<div class="header-title">
+						<h2>Портфолио</h2>
+						<div class="push25"></div>
+					</div>
+					<div class="subtitle">
+						<p>
+							Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы. Внезапно, некоторые особенности внутренней политики освещают чрезвычайно интересные.
+						</p>
+					</div>
+				</div>
+				<div class="gallery-wrapper">
+					{% for gallery in album_list %}
+					<!--a href="{{ gallery.get_absolute_url }}" class="gallery-item">
+						<div class="img-wrap">
+							{% if gallery.image %}
+								<img src="{{ gallery.image.url }}" alt="album">!--Изображение альбома->
+							{% else %}
+								<img src="{% static 'rapir/images/empty.png' %}" alt="album">
+							{% endif %}
+						</div>
+						<div class="title-wrap">
+							{{ gallery.title }}
+						</div>
+					</a-->
+					{% endfor %}
+					<a href="#" class="gallery-item">
+						<div class="img-wrap">
+							<img src="{% static 'rapir/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
+						</div>
+						<div class="title-wrap">
+							Предварительные выводы неутешительны: синтетическое <!--Название альбома-->
+						</div>
+					</a>
+					<a href="#" class="gallery-item">
+						<div class="img-wrap">
+							<img src="{% static 'rapir/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
+						</div>
+						<div class="title-wrap">
+							Предварительные выводы неутешительны: синтетическое <!--Название альбома-->
+						</div>
+					</a>
+					<a href="#" class="gallery-item">
+						<div class="img-wrap">
+							<img src="{% static 'rapir/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
+						</div>
+						<div class="title-wrap">
+							Предварительные выводы неутешительны: синтетическое <!--Название альбома-->
+						</div>
+					</a>
+					<a href="#" class="gallery-item">
+						<div class="img-wrap">
+							<img src="{% static 'rapir/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
+						</div>
+						<div class="title-wrap">
+							Предварительные выводы неутешительны: синтетическое <!--Название альбома-->
+						</div>
+					</a>
+					<a href="#" class="gallery-item">
+						<div class="img-wrap">
+							<img src="{% static 'rapir/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
+						</div>
+						<div class="title-wrap">
+							Предварительные выводы неутешительны: синтетическое <!--Название альбома-->
+						</div>
+					</a>
+					<a href="#" class="gallery-item">
+						<div class="img-wrap">
+							<img src="{% static 'rapir/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
+						</div>
+						<div class="title-wrap">
+							Предварительные выводы неутешительны: синтетическое <!--Название альбома-->
+						</div>
+					</a>
+				</div>
+				{% include 'rapir/pagination.html' %}
+                <div class="push50"></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+

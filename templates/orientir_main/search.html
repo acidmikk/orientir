@@ -1,0 +1,29 @@
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}РАПИР | {{ search.title }}{% endblock %}
+{% block content %}
+
+<section class="event-page-section">
+	<div class="container">
+		<div class="event-page-wrapper">
+			<div class="push50"></div>
+			<h1>{{ search.title }}</h1>
+			<div class="push10"></div>
+			<div class="content">
+				<p>{{ search.content | safe }}</p>
+			</div>
+			 {% if search.file %}
+                <div class="push20"></div>
+                <!--Презентация-->
+                <iframe id="pres" src="{{ search.file.url }}"></iframe>
+                <div class="push20"></div>
+                <!--Ссылка на скачивание презентации-->
+                <a href="{{ search.file.url }}" download class="button">Скачать презентацию</a>
+            {% endif %}
+			<div class="push50"></div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+
