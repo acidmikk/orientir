@@ -1,4 +1,4 @@
-{% extends "rapir/layout/base.html" %}
+{% extends "orientir_main/layout/base.html" %}
 {% load static %}
 {% block title %}Ориентир | Результаты поиска{% endblock %}
 {% block content %}
@@ -19,7 +19,7 @@
                         </a>
                     {% endfor %}
         
-                    {% include 'rapir/pagination.html' %}
+                    {% include 'orientir_main/pagination.html' %}
                     <div class="push100"></div>
                 {% else %}
                     <p class="notfound">Не найдено публикаций по вашему запросу<br>Попробуйте повторить запрос с другой формулировкой</p>

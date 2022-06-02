@@ -1,5 +1,4 @@
-
-{% extends "rapir/layout/base.html" %}
+{% extends "orientir_main/layout/base.html" %}
 {% load static %}
 {% block title %}Ориентир | Портфолио{% endblock %}
 {% block content %}
@@ -27,7 +26,7 @@
 							{% if gallery.image %}
 								<img src="{{ gallery.image.url }}" alt="album">!--Изображение альбома->
 							{% else %}
-								<img src="{% static 'rapir/images/empty.png' %}" alt="album">
+								<img src="{% static 'orientir_main/images/empty.png' %}" alt="album">
 							{% endif %}
 						</div>
 						<div class="title-wrap">
@@ -37,7 +36,7 @@
 					{% endfor %}
 					<a href="#" class="gallery-item">
 						<div class="img-wrap">
-							<img src="{% static 'rapir/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
+							<img src="{% static 'orientir_main/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
 						</div>
 						<div class="title-wrap">
 							Предварительные выводы неутешительны: синтетическое <!--Название альбома-->
@@ -45,7 +44,7 @@
 					</a>
 					<a href="#" class="gallery-item">
 						<div class="img-wrap">
-							<img src="{% static 'rapir/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
+							<img src="{% static 'orientir_main/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
 						</div>
 						<div class="title-wrap">
 							Предварительные выводы неутешительны: синтетическое <!--Название альбома-->
@@ -53,7 +52,7 @@
 					</a>
 					<a href="#" class="gallery-item">
 						<div class="img-wrap">
-							<img src="{% static 'rapir/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
+							<img src="{% static 'orientir_main/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
 						</div>
 						<div class="title-wrap">
 							Предварительные выводы неутешительны: синтетическое <!--Название альбома-->
@@ -61,7 +60,7 @@
 					</a>
 					<a href="#" class="gallery-item">
 						<div class="img-wrap">
-							<img src="{% static 'rapir/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
+							<img src="{% static 'orientir_main/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
 						</div>
 						<div class="title-wrap">
 							Предварительные выводы неутешительны: синтетическое <!--Название альбома-->
@@ -69,7 +68,7 @@
 					</a>
 					<a href="#" class="gallery-item">
 						<div class="img-wrap">
-							<img src="{% static 'rapir/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
+							<img src="{% static 'orientir_main/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
 						</div>
 						<div class="title-wrap">
 							Предварительные выводы неутешительны: синтетическое <!--Название альбома-->
@@ -77,14 +76,14 @@
 					</a>
 					<a href="#" class="gallery-item">
 						<div class="img-wrap">
-							<img src="{% static 'rapir/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
+							<img src="{% static 'orientir_main/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
 						</div>
 						<div class="title-wrap">
 							Предварительные выводы неутешительны: синтетическое <!--Название альбома-->
 						</div>
 					</a>
 				</div>
-				{% include 'rapir/pagination.html' %}
+				{% include 'orientir_main/pagination.html' %}
                 <div class="push50"></div>
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-{% extends "rapir/layout/base.html" %}
+{% extends "orientir_main/layout/base.html" %}
 {% load static %}
 {% block title %}Ориентир | Эксперты{% endblock %}
 {% block content %}
@@ -25,13 +25,13 @@
                 <div class="participants-wrap">
                     <!--=======================Participants item begin=======================-->
                     {% for expert in experts %}
-                       <!--div class="experts-item">
+                       <div class="experts-item">
 						<div class="expert-inner">
 							<div class="image-wrapper">
 								{% if expert.avatar %}
 								<img src="{{ expert.avatar.url }}" alt="expert"/>
 							{% else %}
-								<img src="{% static 'rapir/images/empty.png' %}" alt="expert">
+								<img src="{% static 'orientir_main/images/empty.png' %}" alt="expert">
 							{% endif %}
 							</div>
 							<div class="experts-text">
@@ -44,141 +44,14 @@
 								</div>
 							</div>
 						</div>
-					</div-->
+					</div>
                     {% endfor %}
-                    <div class="experts-item">
-                        <div class="expert-inner">
-                            <div class="image-wrapper">
-                                <img src="{% static 'rapir/images/ph1.jpg' %}" alt="expert"/>
-                            </div>
-                            <div class="experts-text">
-                                <div class="title-wrapper">
-                                    Баханова Елена Викторовна
-                                </div>
-                                <div class="push10"></div>
-                                <div class="description-wrapper">
-                                    психолог, кандидат социологических наук, докторант, имеет более 60 публикаций и учебных пособий, в том числе 3 монографии
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experts-item">
-                        <div class="expert-inner">
-                            <div class="image-wrapper">
-                                <img src="{% static 'rapir/images/ph1.jpg' %}" alt="expert"/>
-                            </div>
-                            <div class="experts-text">
-                                <div class="title-wrapper">
-                                    Башарина Алла Викторовна
-                                </div>
-                                <div class="push10"></div>
-                                <div class="description-wrapper">
-                                    Кандидат социологических наук, магистр юриспруденции
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experts-item">
-                        <div class="expert-inner">
-                            <div class="image-wrapper">
-                                <img src="{% static 'rapir/images/ph1.jpg' %}" alt="expert"/>
-                            </div>
-                            <div class="experts-text">
-                                <div class="title-wrapper">
-                                    Игонина Наталья Валентиновна
-                                </div>
-                                <div class="push10"></div>
-                                <div class="description-wrapper">
-                                    Директор Медицинского центра "Медсовет", диетолог, специалист по ведению здорового образа жизни
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experts-item">
-                        <div class="expert-inner">
-                            <div class="image-wrapper">
-                                <img src="{% static 'rapir/images/ph9.jpg' %}" alt="expert"/>
-                            </div>
-                            <div class="experts-text">
-                                <div class="title-wrapper">
-                                    Сибагатулина Елена Ивановна
-                                </div>
-                                <div class="push10"></div>
-                                <div class="description-wrapper">
-                                    председатель Ульяновское региональное отделение общероссийской общественной организации «Российский Красный Крест»
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experts-item">
-                        <div class="expert-inner">
-                            <div class="image-wrapper">
-                                <img src="{% static 'rapir/images/ph1.jpg' %}" alt="expert"/>
-                            </div>
-                            <div class="experts-text">
-                                <div class="title-wrapper">
-                                    Баханова Елена Викторовна
-                                </div>
-                                <div class="push10"></div>
-                                <div class="description-wrapper">
-                                    психолог, кандидат социологических наук, докторант, имеет более 60 публикаций и учебных пособий, в том числе 3 монографии
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experts-item">
-                        <div class="expert-inner">
-                            <div class="image-wrapper">
-                                <img src="{% static 'rapir/images/ph9.jpg' %}" alt="expert"/>
-                            </div>
-                            <div class="experts-text">
-                                <div class="title-wrapper">
-                                    Башарина Алла Викторовна
-                                </div>
-                                <div class="push10"></div>
-                                <div class="description-wrapper">
-                                    Кандидат социологических наук, магистр юриспруденции
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experts-item">
-                        <div class="expert-inner">
-                            <div class="image-wrapper">
-                                <img src="{% static 'rapir/images/ph1.jpg' %}" alt="expert"/>
-                            </div>
-                            <div class="experts-text">
-                                <div class="title-wrapper">
-                                    Игонина Наталья Валентиновна
-                                </div>
-                                <div class="push10"></div>
-                                <div class="description-wrapper">
-                                    Директор Медицинского центра "Медсовет", диетолог, специалист по ведению здорового образа жизни
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experts-item">
-                        <div class="expert-inner">
-                            <div class="image-wrapper">
-                                <img src="{% static 'rapir/images/ph9.jpg' %}" alt="expert"/>
-                            </div>
-                            <div class="experts-text">
-                                <div class="title-wrapper">
-                                    Сибагатулина Елена Ивановна
-                                </div>
-                                <div class="push10"></div>
-                                <div class="description-wrapper">
-                                    председатель Ульяновское региональное отделение общероссийской общественной организации «Российский Красный Крест»
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     
                     <!--=======================Participants item end=======================-->
                 </div>
                 <div class="button-wrap hidden-lg hidden-md">
-                    <a class="button" href="{% url 'structure' 'e' %}">Смотреть все</a>
+                    <a class="button" href="{% url 'structure' %}">Смотреть все</a>
                 </div>
             </div>
         </div>

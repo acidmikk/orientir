@@ -1,6 +1,6 @@
-{% extends "rapir/layout/base.html" %}
+{% extends "orientir_main/layout/base.html" %}
 {% load static %}
-{% block title %}РАПИР | Главная{% endblock %}
+{% block title %}Ориентир | Главная{% endblock %}
 {% block content %}
 <!--------------------------------------------------------------Slider begin-------------------------------------------------------------->
 <div class="push40 hidden-xs"></div>
@@ -8,7 +8,7 @@
 	<div class="container">
 		<div class="header-img-wrap">
 			{% for slide in slider %}
-			<!--div class="header-img" style="background-image: url({{slide.image.url}});">
+			<div class="header-img" style="background-image: url({{slide.image.url}});">
 				<div class="header-img-inner">
 					<h2>
 						{{ slide.title }}
@@ -20,34 +20,8 @@
 						<a href="#feedconsul" class="button">Бесплатная консультация</a>
 					</div>
 				</div>
-			</div-->
+			</div>
 			{% endfor%}
-			<div class="header-img" style="background-image: url({% static 'rapir/images/image-header.jpg' %});">
-				<div class="header-img-inner">
-					<h2>
-						Развиваем компании масштабируя бизнес
-					</h2>
-					<div class="describtion">
-						Мы свяжемся, чтобы вывести ваш бизнес на новую ступень развития.
-					</div>
-					<div class="button-wrapper">
-						<a href="#feedconsul" class="button">Бесплатная консультация</a>
-					</div>
-				</div>
-			</div>
-			<div class="header-img" style="background-image: url({% static 'rapir/images/image-header.jpg' %});">
-				<div class="header-img-inner">
-					<h2>
-						Развиваем компании масштабируя бизнес
-					</h2>
-					<div class="describtion">
-						Мы свяжемся, чтобы вывести ваш бизнес на новую ступень развития.
-					</div>
-					<div class="button-wrapper">
-						<a href="#feedconsul" class="button">Бесплатная консультация</a>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 	<div class="push70"></div>
@@ -70,13 +44,13 @@
 				</div>
 				<div class="subtitle">
 					<p>
-                        Предварительные выводы неутешительны: синтетическое тестирование создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса поэтапного и последовательного развития общества. 
+                        здесь текст
                     </p>
 				</div>
 				<a class="button" href="{% url 'about' %}">Подробнее</a>
 			</div>
 			<div class="content-image visible-lg visible-md">
-				<img src="{% static 'rapir/images/president.png' %}" alt="">
+				<img src="{% static 'orientir_main/images/president.png' %}" alt="мб лого">
 			</div>
 		</div>
 	</div>
@@ -97,14 +71,14 @@
 					</div>
 					<div class="subtitle">
 						<p>
-							Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы. Внезапно, некоторые особенности внутренней политики освещают чрезвычайно интересные.
-						</p>
+							про проекты что-то
+                        </p>
 					</div>
 				</div>
 				<div class="section-item-wrapper">
 					<!--=======================Project item begin (2 item for preview)=======================-->
 					{% for project in projects %}
-					<!--a href="{{ project.get_absolute_url }}" class="section-item">
+					<a href="{{ project.get_absolute_url }}" class="section-item">
                         <div class="title-wrap">
                             <h3>{{ project.title }}</h3>
                             <div class="project-subtitle">
@@ -112,29 +86,11 @@
 							</div>
 							<div class="button" href="{{ project.get_absolute_url }}">Подробнее</div>
                         </div>
-					</a-->
+					</a>
                     {% endfor %}
-					<a href="#" class="section-item">
-                        <div class="title-wrap">
-                            <h3>Lorem ipsum dolor</h3>
-                            <div class="project-subtitle">
-								Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
-							</div>
-							<div class="button" href="#">Подробнее</div>
-                        </div>
-					</a>
-					<a href="#" class="section-item">
-                        <div class="title-wrap">
-                            <h3>Lorem ipsum dolor</h3>
-                            <div class="project-subtitle">
-								Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
-							</div>
-							<div class="button" href="#">Подробнее</div>
-                        </div>
-					</a>
 					<!--=======================Project item end=======================-->
 				</div>
-				<a class="button" href="{% url 'works' %}">Смотреть все</a>
+				<a class="button" href="{% url 'projects' %}">Смотреть все</a>
 			</div>
 		</div>
 	</div>
@@ -154,7 +110,7 @@
         <div class="num-item">
             <div class="element">
             	<div class="img-wrap">
-            		<img src="{% static 'rapir/images/icons/icon1.png' %}" alt="">
+            		<img src="{% static 'orientir_main/images/icons/icon1.png' %}" alt="">
             	</div>
                 <div class="title-wrap">
                 	проектов было<br>реализовано нашей<br>организацией
@@ -167,7 +123,7 @@
         <div class="num-item">
             <div class="element">
                 <div class="img-wrap">
-            		<img src="{% static 'rapir/images/icons/icon2.png' %}" alt="">
+            		<img src="{% static 'orientir_main/images/icons/icon2.png' %}" alt="">
             	</div>
                 <div class="title-wrap">
                 	человек принимают<br>участие в деятельности<br>центра
@@ -180,7 +136,7 @@
         <div class="num-item">
             <div class="element">
                 <div class="img-wrap">
-            		<img src="{% static 'rapir/images/icons/icon3.png' %}" alt="">
+            		<img src="{% static 'orientir_main/images/icons/icon3.png' %}" alt="">
             	</div>
                 <div class="title-wrap">
                 	лет мы уже<br>осуществляем свою<br>работу
@@ -210,18 +166,18 @@
 					</p>
 				</div>
 				<div class="push15"></div>
-				<a class="button visible-lg visible-md" href="{% url 'structure' 'e' %}">Смотреть все</a>
+				<a class="button visible-lg visible-md" href="{% url 'structure' %}">Смотреть все</a>
 			</div>
 			<div class="participant-slider">
 				<!--=======================Participants item begin=======================-->
 				{% for expert in experts %}
-					<!--div class="experts-item">
+					<div class="experts-item">
 						<div class="expert-inner">
 							<div class="image-wrapper">
 								{% if expert.avatar %}
 								<img src="{{ expert.avatar.url }}" alt="expert"/>
 							{% else %}
-								<img src="{% static 'rapir/images/empty.png' %}" alt="expert">
+								<img src="{% static 'orientir_main/images/empty.png' %}" alt="expert">
 							{% endif %}
 							</div>
 							<div class="experts-text">
@@ -234,77 +190,12 @@
 								</div>
 							</div>
 						</div>
-					</div-->
+					</div>
                 {% endfor %}
-				<div class="experts-item">
-					<div class="expert-inner">
-						<div class="image-wrapper">
-							<img src="{% static 'rapir/images/ph1.jpg' %}" alt="expert"/>
-						</div>
-						<div class="experts-text">
-							<div class="title-wrapper">
-								Баханова Елена Викторовна
-							</div>
-							<div class="push10"></div>
-							<div class="description-wrapper">
-								психолог, кандидат социологических наук, докторант, имеет более 60 публикаций и учебных пособий, в том числе 3 монографии
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="experts-item">
-					<div class="expert-inner">
-						<div class="image-wrapper">
-							<img src="{% static 'rapir/images/ph1.jpg' %}" alt="expert"/>
-						</div>
-						<div class="experts-text">
-							<div class="title-wrapper">
-								Башарина Алла Викторовна
-							</div>
-							<div class="push10"></div>
-							<div class="description-wrapper">
-								Кандидат социологических наук, магистр юриспруденции
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="experts-item">
-					<div class="expert-inner">
-						<div class="image-wrapper">
-							<img src="{% static 'rapir/images/ph1.jpg' %}" alt="expert"/>
-						</div>
-						<div class="experts-text">
-							<div class="title-wrapper">
-								Игонина Наталья Валентиновна
-							</div>
-							<div class="push10"></div>
-							<div class="description-wrapper">
-								Директор Медицинского центра "Медсовет", диетолог, специалист по ведению здорового образа жизни
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="experts-item">
-					<div class="expert-inner">
-						<div class="image-wrapper">
-							<img src="{% static 'rapir/images/ph1.jpg' %}" alt="expert"/>
-						</div>
-						<div class="experts-text">
-							<div class="title-wrapper">
-								Сибагатулина Елена Ивановна
-							</div>
-							<div class="push10"></div>
-							<div class="description-wrapper">
-								председатель Ульяновское региональное отделение общероссийской общественной организации «Российский Красный Крест»
-							</div>
-						</div>
-					</div>
-				</div>
-				
 				<!--=======================Participants item end=======================-->
 			</div>
 			<div class="button-wrap hidden-lg hidden-md">
-				<a class="button" href="{% url 'structure' 'e' %}">Смотреть все</a>
+				<a class="button" href="{% url 'structure' %}">Смотреть все</a>
 			</div>
 		</div>
 	</div>
@@ -316,7 +207,7 @@
 	<div class="contacts-inner">
 		<div class="contacts-item contacts-item-adress">
 			<div class="img-wrapper">
-				<img src="{% static 'rapir/images/map.png' %}"/>
+				<img src="{% static 'orientir_main/images/map.png' %}"/>
 			</div>
 			<div class="title-wrap">
 				432072 Ульяновская область,<br>
@@ -329,7 +220,7 @@
 		</div>
 		<div class="contacts-item contacts-item-phone">
 			<div class="img-wrapper">
-				<img src="{% static 'rapir/images/phone.png' %}"/>
+				<img src="{% static 'orientir_main/images/phone.png' %}"/>
 			</div>
 			<div class="title-wrap">
 				8 (937) 271-11-22 <br>
@@ -353,13 +244,13 @@
 		<div class="push20"></div>
 		<div class="news-wrapper">
 			{% for new in last_news %}
-			<!--div class="news-item">
+			<div class="news-item">
 				<a class="link-block" href="{% url 'new' new.slug %}"></a>
 				<div class="news-img-wrap">
 					{% if new.image %}
 						<img src="{{ new.image.url }}" alt="new">
 					{% else %}
-						<img src="{% static 'rapir/images/empty-news.jpg' %}" alt="new">
+						<img src="{% static 'orientir_main/images/empty-news.jpg' %}" alt="new">
 					{% endif %}
 				</div>
 				<div class="news-text">
@@ -380,80 +271,8 @@
 						</div>
 					</div>
 				</div>
-			</div-->
+			</div>
 			{% endfor %}
-			<div class="news-item">
-				<a class="link-block" href="#"></a>
-				<div class="news-img-wrap">
-					<img src="{% static 'rapir/images/image-header.jpg' %}" alt="new">
-				</div>
-				<div class="news-text">
-					<div class="news-date">
-						<i class="fa fa-calendar-o" aria-hidden="true"></i>
-						10.02.22
-					</div>
-					<div class="news-text-inner">
-						<div class="news-inner">
-							<div class="news-title">
-								How to make your website
-							</div>
-							<a class="" href="#">Читать далее <span>>></span></a>
-						</div>
-						<div class="annotation">
-							<div class="padding"></div>
-							Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="news-item">
-				<a class="link-block" href="#"></a>
-				<div class="news-img-wrap">
-					<img src="{% static 'rapir/images/image-header.jpg' %}" alt="new">
-				</div>
-				<div class="news-text">
-					<div class="news-date">
-						<i class="fa fa-calendar-o" aria-hidden="true"></i>
-						10.02.22
-					</div>
-					<div class="news-text-inner">
-						<div class="news-inner">
-							<div class="news-title">
-								How to make your website on android How to  make your website
-							</div>
-							<a class="" href="#">Читать далее <span>>></span></a>
-						</div>
-						<div class="annotation">
-							<div class="padding"></div>
-							Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="news-item">
-				<a class="link-block" href="#"></a>
-				<div class="news-img-wrap">
-					<img src="{% static 'rapir/images/image-header.jpg' %}" alt="new">
-				</div>
-				<div class="news-text">
-					<div class="news-date">
-						<i class="fa fa-calendar-o" aria-hidden="true"></i>
-						10.02.22
-					</div>
-					<div class="news-text-inner">
-						<div class="news-inner">
-							<div class="news-title">
-								How to make your website on android
-							</div>
-							<a class="" href="#">Читать далее <span>>></span></a>
-						</div>
-						<div class="annotation">
-							<div class="padding"></div>
-							Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-						</div>
-					</div>
-				</div>
-			</div>
 		<a href="{% url 'news' %}" class="button visible-xs">Смотреть все</a>
 		<div class="push50"></div>
 		</div>

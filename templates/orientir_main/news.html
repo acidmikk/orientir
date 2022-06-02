@@ -1,5 +1,4 @@
-
-{% extends "rapir/layout/base.html" %}
+{% extends "orientir_main/layout/base.html" %}
 {% load static %}
 {% block title %}Ориентир | Новости{% endblock %}
 {% block content %}
@@ -31,7 +30,7 @@
 					{% if new.image %}
 						<img src="{{ new.image.url }}" alt="new">
 					{% else %}
-						<img src="{% static 'rapir/images/empty-news.jpg' %}" alt="new">
+						<img src="{% static 'orientir_main/images/empty-news.jpg' %}" alt="new">
 					{% endif %}
 				</div>
 				<div class="news-text">
@@ -57,7 +56,7 @@
 			<div class="news-item">
 				<a class="link-block" href="#"></a>
 				<div class="news-img-wrap">
-					<img src="{% static 'rapir/images/image-header.jpg' %}" alt="new">
+					<img src="{% static 'orientir_main/images/image-header.jpg' %}" alt="new">
 				</div>
 				<div class="news-text">
 					<div class="news-date">
@@ -81,7 +80,7 @@
 			<div class="news-item">
 				<a class="link-block" href="#"></a>
 				<div class="news-img-wrap">
-					<img src="{% static 'rapir/images/image-header.jpg' %}" alt="new">
+					<img src="{% static 'orientir_main/images/image-header.jpg' %}" alt="new">
 				</div>
 				<div class="news-text">
 					<div class="news-date">
@@ -105,7 +104,7 @@
 			<div class="news-item">
 				<a class="link-block" href="#"></a>
 				<div class="news-img-wrap">
-					<img src="{% static 'rapir/images/image-header.jpg' %}" alt="new">
+					<img src="{% static 'orientir_main/images/image-header.jpg' %}" alt="new">
 				</div>
 				<div class="news-text">
 					<div class="news-date">
@@ -129,7 +128,7 @@
 			<div class="news-item">
 				<a class="link-block" href="#"></a>
 				<div class="news-img-wrap">
-					<img src="{% static 'rapir/images/image-header.jpg' %}" alt="new">
+					<img src="{% static 'orientir_main/images/image-header.jpg' %}" alt="new">
 				</div>
 				<div class="news-text">
 					<div class="news-date">
@@ -153,7 +152,7 @@
 			<div class="news-item">
 				<a class="link-block" href="#"></a>
 				<div class="news-img-wrap">
-					<img src="{% static 'rapir/images/image-header.jpg' %}" alt="new">
+					<img src="{% static 'orientir_main/images/image-header.jpg' %}" alt="new">
 				</div>
 				<div class="news-text">
 					<div class="news-date">
@@ -177,7 +176,7 @@
 			<div class="news-item">
 				<a class="link-block" href="#"></a>
 				<div class="news-img-wrap">
-					<img src="{% static 'rapir/images/image-header.jpg' %}" alt="new">
+					<img src="{% static 'orientir_main/images/image-header.jpg' %}" alt="new">
 				</div>
 				<div class="news-text">
 					<div class="news-date">
@@ -198,7 +197,7 @@
 					</div>
 				</div>
 			</div>
-			{% include 'rapir/pagination.html' %}
+			{% include 'orientir_main/pagination.html' %}
 			<div class="push50"></div>
 	</div>
 </section>

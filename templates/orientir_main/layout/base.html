@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="SKYPE_TOOLBAR" content ="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="icon" type="image/png" href="{% static 'rapir/images/favicon.png' %}"/>
-    <link href="{% static 'rapir/css/style.css' %}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'rapir/slick/slick.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'rapir/slick/slick-theme.css' %}"/>
+    <link rel="icon" type="image/png" href="{% static 'orientir_main/images/favicon.png' %}"/>
+    <link href="{% static 'orientir_main/css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'orientir_main/slick/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'orientir_main/slick/slick-theme.css' %}"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
 <div class="mobile-menu" id="mobmenu">
     <div class="logo-wrap">
         <a href="{% url 'main' %}" class="logo-img-wrap">
-            <img alt="img" src="{% static 'rapir/images/logo.webp' %}"/>
+            <img alt="img" src="{% static 'orientir_main/images/logo.webp' %}"/>
         </a>
         <div class="name-company">
             <span>Центр Ориентир</span><br>
@@ -44,10 +44,10 @@
                 <a href="{% url 'about' %}">Об организации</a>
             </li>
             <li>
-                <a href="{% url 'works' %}">Проекты</a>
+                <a href="{% url 'projects' %}">Проекты</a>
             </li>
             <li>
-                <a href="{% url 'structure' 'e' %}">Экспертный совет</a>
+                <a href="{% url 'structure' %}">Экспертный совет</a>
             </li>
             <li>
                 <a href="{% url 'galleries' %}">Портфолио</a>
@@ -109,10 +109,10 @@
                             <a href="{% url 'about' %}">Об организации</a>
                         </li>
                         <li>
-                            <a href="{% url 'works' %}">Проекты</a>
+                            <a href="{% url 'projects' %}">Проекты</a>
                         </li>
                         <li>
-                            <a href="{% url 'structure' 'e' %}">Экспертный совет</a>
+                            <a href="{% url 'structure' %}">Экспертный совет</a>
                         </li>
                         <li>
                             <a href="{% url 'galleries' %}">Портфолио</a>
@@ -126,7 +126,7 @@
                         <li>
                             <a href="#">Форум</a>
                         </li>
-                        
+
                     </ul>
                     <div class="header-search none">
                         <form data-key="" action="{% url 'search' %}" method="get" id="">
@@ -171,7 +171,7 @@
             <div class="header-inner">
                 <div class="logo-wrap">
                     <a href="{% url 'main' %}" class="logo-img-wrap">
-                        <img src="{% static 'rapir/images/logo.webp' %}">
+                        <img src="{% static 'orientir_main/images/logo.webp' %}">
                     </a>
                     <div class="name-company">
                         <span>Центр Ориентир</span><br>
@@ -209,7 +209,7 @@
             <div class="footer-element">
                 <div class="logo-wrap">
                     <a href="{% url 'main' %}" class="logo-img-wrap">
-                        <img alt="img" src="{% static 'rapir/images/logo.webp' %}"/>
+                        <img alt="img" src="{% static 'orientir_main/images/logo.webp' %}"/>
                     </a>
                     <div class="name-company">
                         <span>Центр Ориентир</span><br>
@@ -229,10 +229,7 @@
                             <a href="{% url 'about' %}">Об организации</a>
                         </li>
                         <li>
-                            <a href="{% url 'works' %}">Проекты</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'structure' 'e' %}">Экспертный совет</a>
+                            <a href="{% url 'projects' %}">Проекты</a>
                         </li>
                         <li>
                             <a href="{% url 'galleries' %}">Портфолио</a>
@@ -243,7 +240,7 @@
                         <li>
                             <a href="{% url 'contact' %}">Контакты</a>
                         </li>
-                       
+
                     </ul>
                 </nav>
             </div>
@@ -267,7 +264,7 @@
 <div class="footer-bottom-bar">
     <div class="container">
         <div class="footer-bottom-bar-inner">
-            <a href="{% url 'main' %}">Ульяновский общественный фонд "Региональная аналитика.<br> Профессиональные исследования. Рейтинги" <br> © РАПИР</a>
+            <a href="{% url 'main' %}">здесь надпись ориентира<br> <br>Ориентир</a>
             <div class="footer-bottom-bar-inner-end">
 	            <div>Сайт разработан <a href="https://telegram.me/revengel66">revengel</a> и <a href="https://telegram.me/acidmikk">acidmikk</a></div>
 	            <div class="push10"></div>
@@ -291,7 +288,7 @@
                 <div class="form-group">
                     <input type="text" name="fio" class="form-control required" placeholder="Ваше имя" required/>
                 </div>
-            
+
                 <div class="form-group">
                     <input type="text" name="tel" class="form-control tel required" placeholder="Телефон*" required />
                 </div>
@@ -316,7 +313,7 @@
                 <div class="form-group">
                     <input type="text" name="login" class="form-control required" placeholder="Логин*" required/>
                 </div>
-            
+
                 <div class="form-group">
                     <input type="password" name="pass" class="form-control required" placeholder="Пароль*" required />
                 </div>
@@ -347,7 +344,7 @@
                 <div class="form-group">
                     <input type="password" name="pass" class="form-control required" placeholder="Повторите пароль*" required />
                 </div>
-                
+
                 <p><span class="red">*</span> <span class="f12">- поля, обязательные для заполнения</span></p>
                 <div>
                     <input type="submit" class="button btn" value="Зарегистрироваться" />
@@ -357,12 +354,12 @@
     </div>
     <!-- * * * * * * Callback modal block: end * * * * * * -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="{% static 'rapir/slick/slick.js' %}"  type="text/javascript" charset="utf-8"></script>
-<script src="{% static 'rapir/slick/slick.min.js' %}"  type="text/javascript" charset="utf-8"></script>
-<script src="{% static 'rapir/js/modernizr.js' %}" ></script>
-<script src="{% static 'rapir/js/scripts.js' %}" ></script>
-<script src="{% static 'rapir/js/jquery.fancybox.js' %}" ></script>
-<script src="{% static 'rapir/js/jquery.animateNumber.min.js' %}" ></script>
-<script src="{% static 'rapir/js/jquery.viewportchecker.js' %}" ></script>
+<script src="{% static 'orientir_main/slick/slick.js' %}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'orientir_main/slick/slick.min.js' %}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'orientir_main/js/modernizr.js' %}" ></script>
+<script src="{% static 'orientir_main/js/scripts.js' %}" ></script>
+<script src="{% static 'orientir_main/js/jquery.fancybox.js' %}" ></script>
+<script src="{% static 'orientir_main/js/jquery.animateNumber.min.js' %}" ></script>
+<script src="{% static 'orientir_main/js/jquery.viewportchecker.js' %}" ></script>
 </body>
 </html>

@@ -138,15 +138,15 @@ USE_TZ = True
 STATIC_URL = '/static/static/'
 MEDIA_URL = '/static/media/'
 STATIC_ROOT = config.project_path + 'static/static/'#os.path.join(BASE_DIR, 'static', 'static')
-MEDIA_ROOT = config.project_path +  'static/media/'#os.path.join(BASE_DIR, 'static', 'media')
+MEDIA_ROOT = config.project_path + 'static/media/'#os.path.join(BASE_DIR, 'static', 'media')
 
 #Cache
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': '/cache/'#config.project_path + '/orientir/cache/django_cache',
-    }
-}
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+#         'LOCATION': #config.project_path + '/orientir/cache/django_cache',
+#     }
+# }
 
 
 # Default primary key field type

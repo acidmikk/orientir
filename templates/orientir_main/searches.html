@@ -1,6 +1,6 @@
-{% extends "rapir/layout/base.html" %}
+{% extends "orientir_main/layout/base.html" %}
 {% load static %}
-{% block title %}РАПИР | Исследования{% endblock %}
+{% block title %}Ориентир | Исследования{% endblock %}
 {% block content %}
 
 <section class="searches-section">
@@ -15,7 +15,7 @@
                     {% if search.image %}
 					    <img src="{{ search.image.url }}" alt="">
                     {% else %}
-                        <img src="{% static 'rapir/images/empty.png' %}" alt="new">
+                        <img src="{% static 'orientir_main/images/empty.png' %}" alt="new">
                     {% endif %}
                 </div>
                 <div class="title-wrap">
@@ -24,7 +24,7 @@
             </a>
             {% endfor %}
 		</div>
-        {% include 'rapir/pagination.html' %}
+        {% include 'orientir_main/pagination.html' %}
 		<div class="push100"></div>
 	</div>
 </section>

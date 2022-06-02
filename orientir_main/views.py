@@ -48,6 +48,12 @@ def main(request):
     return render(request, 'orientir_main/index.html', context)
 
 
+def workers(request):
+    list_worker = People.objects.all()
+    context = {'experts': list_worker}
+    return render(request, 'orientir_main/experts.html', context)
+
+
 def about(request):
     list_worker = People.objects.all()
     other = About.objects.first()
@@ -61,7 +67,6 @@ class GalleriesList(ListView):
     queryset = Album.objects.all()
     template_name = 'orientir_main/galleries.html'
     paginate_by = 12
-
 
 def gallery(request, slug):
     gal_lery = Photo.objects.filter(album__slug=slug)

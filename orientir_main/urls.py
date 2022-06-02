@@ -18,6 +18,7 @@ urlpatterns = [
         path('<slug:slug>', gallery, name='gallery'),
         path('', GalleriesList.as_view(), name='galleries'),
     ])),
+    path('structure/',  workers, name='structure'),
     path('smi/', SmiList.as_view(), name='smi'),
     path('search/', SearchList.as_view(), name='search'),
     path('contact/', contact_view, name='contact'),
