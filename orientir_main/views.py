@@ -45,11 +45,27 @@ def main(request):
     last_project = Project.objects.all()[:2]
     list_people = People.objects.all()
     slider = Slider.objects.all()
+    # если метод GET, вернем форму
+    if request.method == 'GET':
+        form = ContactForm()
+    elif request.method == 'POST':
+        # если метод POST, проверим форму и отправим письмо
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['mess']
+            recepients = [settings.EMAIL_HOST_USER]
+            send_mail(name + ' -- ' + email, message, settings.EMAIL_HOST_USER, recepients)
+            return redirect('main')
+    else:
+        return HttpResponse('Неверный запрос.')
 
     context = {'last_news': last_news,
                'projects': last_project,
                'experts': list_people,
-               'slider': slider}
+               'slider': slider,
+               'form': form}
     return render(request, 'orientir_main/index.html', context)
 
 
@@ -80,13 +96,6 @@ def gallery(request, slug):
     context = {'gallery': gal_lery,
                'album': title}
     return render(request, 'orientir_main/gallery.html', context)
-
-
-class SmiList(ListView):
-    model = Smi
-    queryset = Smi.objects.all()
-    template_name = 'orientir_main/mass_media.html'
-    paginate_by = 12
 
 
 class SearchList(ListView):

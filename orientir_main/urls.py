@@ -24,7 +24,6 @@ urlpatterns = [
         path('logout/', logout_user, name='logout'),
     ])),
     path('structure/',  workers, name='structure'),
-    path('smi/', SmiList.as_view(), name='smi'),
     path('search/', SearchList.as_view(), name='search'),
     path('contact/', contact_view, name='contact'),
     path('lastnews/', LatestFeedRSS(), name='rss'),

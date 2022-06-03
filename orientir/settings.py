@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'django_cleanup',
     'orientir_main.apps.OrientirMainConfig',
+    'forum.apps.ForumConfig',
 ]
 
 MIDDLEWARE = [

@@ -19,6 +19,7 @@ from orientir_main import views as orientir_core
 
 urlpatterns = [
     path('', include('orientir_main.urls')),
+    path('forum/', include('forum.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('admin/', admin.site.urls),
     path('user-info/', orientir_core.user_info)
