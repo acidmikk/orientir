@@ -18,6 +18,11 @@ urlpatterns = [
         path('<slug:slug>', gallery, name='gallery'),
         path('', GalleriesList.as_view(), name='galleries'),
     ])),
+    path('user/', include([
+        path('registration/', RegisterUser.as_view(), name='registration'),
+        path('login/', LoginUser.as_view(), name='login'),
+        path('logout/', logout_user, name='logout'),
+    ])),
     path('structure/',  workers, name='structure'),
     path('smi/', SmiList.as_view(), name='smi'),
     path('search/', SearchList.as_view(), name='search'),

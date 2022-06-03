@@ -45,13 +45,13 @@ class People(models.Model):
                                verbose_name='Фото человека')
     published = models.DateField(db_index=True, verbose_name='Дата публикации')
 
-    class Position(models.TextChoices):
-        __empty__ = 'Выберете группу человека'
-        expert = 'e', 'Экспертный совет'
-        supervisor = 's', 'Наблюдательный совет'
-        president = 'p', 'Президент фонда'
-    position = models.CharField(max_length=1, choices=Position.choices, default=Position.__empty__,
-                                verbose_name='Позиция')
+    # class Position(models.TextChoices):
+    #     __empty__ = 'Выберете группу человека'
+    #     expert = 'e', 'Экспертный совет'
+    #     supervisor = 's', 'Наблюдательный совет'
+    #     president = 'p', 'Президент фонда'
+    # position = models.CharField(max_length=1, choices=Position.choices, default=Position.__empty__,
+    #                             verbose_name='Позиция')
 
     def __str__(self):
         return self.title
@@ -62,6 +62,32 @@ class People(models.Model):
     class Meta:
         verbose_name_plural = 'Люди'
         verbose_name = 'Человека'
+
+
+class User(models.Model):
+    login = models.CharField(max_length=250, verbose_name='Логин')
+    password = models.CharField(max_length=40, verbose_name='Пароль')
+    email = models.EmailField()
+    avatar = models.ImageField(upload_to=f'person/%Y/%m/%d/', blank=True, null=True,
+                               verbose_name='Фото человека')
+    published = models.DateField(db_index=True, verbose_name='Дата регистрации', auto_created=True)
+
+    class Position(models.TextChoices):
+        __empty__ = 'Выберете группу человека'
+        admin = 'a', 'admin'
+        user = 'u', 'user'
+    position = models.CharField(max_length=1, choices=Position.choices, default=Position.user,
+                                verbose_name='Роль')
+
+    def __str__(self):
+        return self.login
+
+    def get_absolute_url(self):
+        return reverse('expert', kwargs={'id': self.id})
+
+    class Meta:
+        verbose_name_plural = 'Польхователи'
+        verbose_name = 'Пользователь'
 
 
 class Project(models.Model):

@@ -1,6 +1,6 @@
 {% extends "orientir_main/layout/base.html" %}
 {% load static %}
-{% block title %}Ориентир | Портфолио{% endblock %}
+{% block title %}Ориентир | Галерея{% endblock %}
 {% block content %}
 <section class="project-section">
     <hr>
@@ -10,7 +10,7 @@
 			<div class="content">
 				<div class="project-header">
 					<div class="header-title">
-						<h2>Портфолио</h2>
+						<h2>Галерея</h2>
 						<div class="push25"></div>
 					</div>
 					<div class="subtitle">
@@ -21,7 +21,7 @@
 				</div>
 				<div class="gallery-wrapper">
 					{% for gallery in album_list %}
-					<!--a href="{{ gallery.get_absolute_url }}" class="gallery-item">
+					<a href="{{ gallery.get_absolute_url }}" class="gallery-item">
 						<div class="img-wrap">
 							{% if gallery.image %}
 								<img src="{{ gallery.image.url }}" alt="album">!--Изображение альбома->
@@ -32,56 +32,8 @@
 						<div class="title-wrap">
 							{{ gallery.title }}
 						</div>
-					</a-->
+					</a>
 					{% endfor %}
-					<a href="#" class="gallery-item">
-						<div class="img-wrap">
-							<img src="{% static 'orientir_main/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
-						</div>
-						<div class="title-wrap">
-							Предварительные выводы неутешительны: синтетическое <!--Название альбома-->
-						</div>
-					</a>
-					<a href="#" class="gallery-item">
-						<div class="img-wrap">
-							<img src="{% static 'orientir_main/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
-						</div>
-						<div class="title-wrap">
-							Предварительные выводы неутешительны: синтетическое <!--Название альбома-->
-						</div>
-					</a>
-					<a href="#" class="gallery-item">
-						<div class="img-wrap">
-							<img src="{% static 'orientir_main/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
-						</div>
-						<div class="title-wrap">
-							Предварительные выводы неутешительны: синтетическое <!--Название альбома-->
-						</div>
-					</a>
-					<a href="#" class="gallery-item">
-						<div class="img-wrap">
-							<img src="{% static 'orientir_main/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
-						</div>
-						<div class="title-wrap">
-							Предварительные выводы неутешительны: синтетическое <!--Название альбома-->
-						</div>
-					</a>
-					<a href="#" class="gallery-item">
-						<div class="img-wrap">
-							<img src="{% static 'orientir_main/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
-						</div>
-						<div class="title-wrap">
-							Предварительные выводы неутешительны: синтетическое <!--Название альбома-->
-						</div>
-					</a>
-					<a href="#" class="gallery-item">
-						<div class="img-wrap">
-							<img src="{% static 'orientir_main/images/about-one.jpg' %}" alt="album">!--Изображение альбома->
-						</div>
-						<div class="title-wrap">
-							Предварительные выводы неутешительны: синтетическое <!--Название альбома-->
-						</div>
-					</a>
 				</div>
 				{% include 'orientir_main/pagination.html' %}
                 <div class="push50"></div>

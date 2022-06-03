@@ -1,9 +1,14 @@
 from itertools import chain
+
+from django.contrib.auth import logout, login
+from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.core.mail import send_mail
-from django.views.generic import ListView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, CreateView
 from django.conf import settings
+from django.contrib.auth.models import User
 
 from .models import *
 from .forms import ContactForm
@@ -68,6 +73,7 @@ class GalleriesList(ListView):
     template_name = 'orientir_main/galleries.html'
     paginate_by = 12
 
+
 def gallery(request, slug):
     gal_lery = Photo.objects.filter(album__slug=slug)
     title = Album.objects.get(slug=slug)
@@ -121,3 +127,47 @@ def contact_view(request):
     else:
         return HttpResponse('Неверный запрос.')
     return render(request, 'orientir_main/contact.html', {'form': form})
+
+
+def user_info(request):
+    text = f"""
+        Selected HttpRequest.user attributes:
+        username:     {request.user.username}
+        is_anonymous: {request.user.is_anonymous}
+        is_staff:     {request.user.is_staff}
+        is_superuser: {request.user.is_superuser}
+        is_active:    {request.user.is_active}
+    """
+    return HttpResponse(text, content_type="text/plain")
+
+
+class RegisterUser(CreateView):
+    form_class = RegisterUserForm
+    template_name = 'orientir_main/registration.html'
+    success_url = reverse_lazy('login')
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return dict(list(context.items()))
+
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect('home')
+
+
+class LoginUser(LoginView):
+    form_class = LoginUserForm
+    template_name = 'orientir_main/login.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return dict(list(context.items()))
+
+    def get_success_url(self):
+        return reverse_lazy('main')
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')

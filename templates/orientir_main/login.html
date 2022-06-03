@@ -1,0 +1,18 @@
+{% extends "orientir_main/layout/base.html" %}
+{% load static %}
+{% block title %}Ориентир | Регистрация{% endblock %}
+{% block content %}
+    <div class="container" id="regist">
+        <h2>Авторизация</h2>
+        <br />
+        <div class="rf">
+            <form method="post" name="login">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div>
+                    <input type="submit" class="button btn" value="Войти" />
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

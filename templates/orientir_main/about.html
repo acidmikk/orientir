@@ -269,20 +269,20 @@
     </section>
 </div>
     {% if about.content3 %}
-        <!--section class="about-part about-part-three" style="background-image: url({{ about.image3.url }});"><!--Картинка для третьей секции страницы>
+        <section class="about-part about-part-three" style="background-image: url({{ about.image3.url }});"><!--Картинка для третьей секции страницы-->
             <div class="push40 hidden-sm hidden-xs"></div>
             <div class="container">
                 <div class="about-part-inner">
                     <div class="content">
-                        {{ about.content3 | safe }}   <!--цк едитор тут для того, чтобы можно было ентерами отделять куски текста друг от друга->
+                        {{ about.content3 | safe }}   <!--цк едитор тут для того, чтобы можно было ентерами отделять куски текста друг от друга-->
                     </div>
                     <div class="about-image">
-                        <img src="{{ about.image3.url }}" alt=""> <!--Картинка для третьей секции страницы->
+                        <img src="{{ about.image3.url }}" alt=""> <!--Картинка для третьей секции страницы-->
                     </div>
                 </div>
             </div>
             <div class="push40 hidden-sm hidden-xs"></div>
-    </section-->
+    </section>
 {% endif %}
 <section class="about-part about-part-three" style="background-image: url({{ about.image3.url }});"><!--Картинка для третьей секции страницы-->
     <div class="push20 hidden-sm hidden-xs"></div>
@@ -361,7 +361,7 @@
 			<div class="participant-slider">
 				<!--=======================Participants item begin=======================-->
 				{% for expert in experts %}
-                    <!--div class="experts-item">
+                    <div class="experts-item">
                         <div class="expert-inner">
                             <div class="image-wrapper">
                                 {% if expert.avatar %}
@@ -380,73 +380,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div-->
+                    </div>
                 {% endfor %}
-				<div class="experts-item">
-					<div class="expert-inner">
-						<div class="image-wrapper">
-							<img src="{% static 'orientir_main/images/ph1.jpg' %}" alt="expert"/>
-						</div>
-						<div class="experts-text">
-							<div class="title-wrapper">
-								Баханова Елена Викторовна
-							</div>
-							<div class="push10"></div>
-							<div class="description-wrapper">
-								психолог, кандидат социологических наук, докторант, имеет более 60 публикаций и учебных пособий, в том числе 3 монографии
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="experts-item">
-					<div class="expert-inner">
-						<div class="image-wrapper">
-							<img src="{% static 'orientir_main/images/ph1.jpg' %}" alt="expert"/>
-						</div>
-						<div class="experts-text">
-							<div class="title-wrapper">
-								Башарина Алла Викторовна
-							</div>
-							<div class="push10"></div>
-							<div class="description-wrapper">
-								Кандидат социологических наук, магистр юриспруденции
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="experts-item">
-					<div class="expert-inner">
-						<div class="image-wrapper">
-							<img src="{% static 'orientir_main/images/ph1.jpg' %}" alt="expert"/>
-						</div>
-						<div class="experts-text">
-							<div class="title-wrapper">
-								Игонина Наталья Валентиновна
-							</div>
-							<div class="push10"></div>
-							<div class="description-wrapper">
-								Директор Медицинского центра "Медсовет", диетолог, специалист по ведению здорового образа жизни
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="experts-item">
-					<div class="expert-inner">
-						<div class="image-wrapper">
-							<img src="{% static 'orientir_main/images/ph1.jpg' %}" alt="expert"/>
-						</div>
-						<div class="experts-text">
-							<div class="title-wrapper">
-								Сибагатулина Елена Ивановна
-							</div>
-							<div class="push10"></div>
-							<div class="description-wrapper">
-								председатель Ульяновское региональное отделение общероссийской общественной организации «Российский Красный Крест»
-							</div>
-						</div>
-					</div>
-				</div>
-				
 				<!--=======================Participants item end=======================-->
 			</div>
 			<div class="button-wrap hidden-lg hidden-md">

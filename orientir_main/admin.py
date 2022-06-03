@@ -35,7 +35,7 @@ class NewsAdmin(admin.ModelAdmin):
 
 @admin.register(People)
 class PeopleAdmin(admin.ModelAdmin):
-    list_display = ('title', 'avatar', 'image_img', 'position')
+    list_display = ('title', 'avatar', 'image_img')
     list_display_links = ('title', 'image_img')
     search_fields = ('title', 'content')
 

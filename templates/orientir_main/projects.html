@@ -30,7 +30,7 @@
 				<div class="section-item-wrapper">
 					<!--=======================Project item begin (2 item for preview)=======================-->
 					{% for project in projects %}
-                       <!--a href="{{ project.get_absolute_url }}" class="section-item">
+                       <a href="{{ project.get_absolute_url }}" class="section-item">
                         <div class="title-wrap">
                             <h3>{{ project.title }}</h3>
                             <div class="project-subtitle">
@@ -38,45 +38,8 @@
 							</div>
 							<div class="button" href="{{ project.get_absolute_url }}">Подробнее</div>
                         </div>
-					</a-->
+					</a>
                     {% endfor %}
-					<a href="#" class="section-item">
-                        <div class="title-wrap">
-                            <h3>Lorem ipsum dolor</h3>
-                            <div class="project-subtitle">
-								Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
-							</div>
-							<div class="button" href="#">Подробнее</div>
-                        </div>
-					</a>
-					<a href="#" class="section-item">
-                        <div class="title-wrap">
-                            <h3>Lorem ipsum dolor</h3>
-                            <div class="project-subtitle">
-								Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-							</div>
-							<div class="button" href="#">Подробнее</div>
-                        </div>
-					</a>
-                    <a href="#" class="section-item">
-                        <div class="title-wrap">
-                            <h3>Lorem ipsum dolor Lorem ipsum dolor</h3>
-                            <div class="project-subtitle">
-								Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
-							</div>
-							<div class="button" href="#">Подробнее</div>
-                        </div>
-					</a>
-					<a href="#" class="section-item">
-                        <div class="title-wrap">
-                            <h3>Lorem ipsum dolor Lorem ipsum dolor</h3>
-                            <div class="project-subtitle">
-								Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
-							</div>
-							<div class="button" href="#">Подробнее</div>
-                        </div>
-					</a>
-                    
 					<!--=======================Project item end=======================-->
 				</div>
 				{% include 'orientir_main/pagination.html' %}
