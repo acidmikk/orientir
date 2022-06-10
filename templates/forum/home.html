@@ -1,0 +1,31 @@
+{% extends "orientir_main/layout/base.html" %}
+{% load static %}
+{% block title %}Ориентир | Форум{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1>Boards</h1>
+        <table class="table">
+            <thead class="thead-inverse">
+              <tr>
+                <th>Board</th>
+                <th>Posts</th>
+                <th>Topics</th>
+                <th>Last Post</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for board in board_list %}
+                <tr>
+                  <td>
+                      <a href="{% url 'board_topics' board.slug %}">{{ board.title }}</a>
+                      <small class="text-muted d-block">{{ board.description }}</small>
+                  </td>
+                  <td class="align-middle">0</td>
+                  <td class="align-middle">0</td>
+                  <td></td>
+                </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
