@@ -17,6 +17,7 @@ from .forms import ContactForm
 class NewsList(ListView):
     model = News
     queryset = News.objects.all()
+    context_object_name = 'news'
     template_name = 'orientir_main/news.html'
     paginate_by = 12
 
@@ -30,14 +31,15 @@ def new(request, slug):
 class ProjectsList(ListView):
     model = Project
     queryset = Project.objects.all()
-    template_name = 'orientir_main/searches.html'
+    context_object_name = 'projects'
+    template_name = 'orientir_main/projects.html'
     paginate_by = 12
 
 
 def project(request, slug):
-    cur_exploration = Project.objects.get(slug=slug)
-    context = {'project': cur_exploration}
-    return render(request, 'orientir_main/search.html', context)
+    cur_project = Project.objects.get(slug=slug)
+    context = {'project': cur_project}
+    return render(request, 'orientir_main/project.html', context)
 
 
 def main(request):
@@ -73,6 +75,12 @@ def workers(request):
     list_worker = People.objects.all()
     context = {'experts': list_worker}
     return render(request, 'orientir_main/experts.html', context)
+
+
+def person(request, id):
+    worker = People.objects.get(id=id)
+    context = {'expert': worker}
+    return render(request, 'orientir_main/expert.html', context)
 
 
 def about(request):

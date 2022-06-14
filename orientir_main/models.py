@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models import Q
 from django.urls import reverse
 from .forms import *
+from orientir.settings import MEDIA_URL
 
 
 class SearchManager(models.Manager):
@@ -41,6 +42,7 @@ class News(models.Model):
 class People(models.Model):
     title = models.CharField(max_length=250, verbose_name='Имя')
     content = models.CharField(max_length=40, null=True, blank=True, verbose_name='Короткое описание')
+    description = models.TextField(verbose_name='Описание')
     avatar = models.ImageField(upload_to=f'person/%Y/%m/%d/', blank=True, null=True,
                                verbose_name='Фото человека')
     published = models.DateField(db_index=True, verbose_name='Дата публикации')
@@ -51,7 +53,7 @@ class People(models.Model):
     #     supervisor = 's', 'Наблюдательный совет'
     #     president = 'p', 'Президент фонда'
     # position = models.CharField(max_length=1, choices=Position.choices, default=Position.__empty__,
-    #                             verbose_name='Позиция')
+    #                            verbose_name='Позиция')
 
     def __str__(self):
         return self.title
@@ -62,32 +64,6 @@ class People(models.Model):
     class Meta:
         verbose_name_plural = 'Люди'
         verbose_name = 'Человека'
-
-
-# class User(models.Model):
-#     login = models.CharField(max_length=250, verbose_name='Логин')
-#     password = models.CharField(max_length=40, verbose_name='Пароль')
-#     email = models.EmailField()
-#     avatar = models.ImageField(upload_to=f'person/%Y/%m/%d/', blank=True, null=True,
-#                                verbose_name='Фото человека')
-#     published = models.DateField(db_index=True, verbose_name='Дата регистрации', auto_created=True)
-#
-#     class Position(models.TextChoices):
-#         __empty__ = 'Выберете группу человека'
-#         admin = 'a', 'admin'
-#         user = 'u', 'user'
-#     position = models.CharField(max_length=1, choices=Position.choices, default=Position.user,
-#                                 verbose_name='Роль')
-#
-#     def __str__(self):
-#         return self.login
-#
-#     def get_absolute_url(self):
-#         return reverse('expert', kwargs={'id': self.id})
-#
-#     class Meta:
-#         verbose_name_plural = 'Пользователи'
-#         verbose_name = 'Пользователь'
 
 
 class Project(models.Model):
@@ -111,24 +87,24 @@ class Project(models.Model):
         ordering = ['-published']
 
 
-class Smi(models.Model):
-    title = models.CharField(max_length=150, verbose_name='Заголовок')
-    content = models.CharField(max_length=260, verbose_name='Текст')
-    link = models.URLField(verbose_name='Ссылка на источник')
-    slug = models.SlugField(max_length=160, unique=True)
-    published = models.DateField(db_index=True, verbose_name='Дата публикации')
-    objects = SearchManager()
-
-    def get_absolute_url(self):
-        return reverse('smi', kwargs={'slug': self.slug})
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name_plural = 'Мы в СМИ'
-        verbose_name = 'Ссылка'
-        ordering = ['-published']
+# class Smi(models.Model):
+#     title = models.CharField(max_length=150, verbose_name='Заголовок')
+#     content = models.CharField(max_length=260, verbose_name='Текст')
+#     link = models.URLField(verbose_name='Ссылка на источник')
+#     slug = models.SlugField(max_length=160, unique=True)
+#     published = models.DateField(db_index=True, verbose_name='Дата публикации')
+#     objects = SearchManager()
+#
+#     def get_absolute_url(self):
+#         return reverse('smi', kwargs={'slug': self.slug})
+#
+#     def __str__(self):
+#         return self.title
+#
+#     class Meta:
+#         verbose_name_plural = 'Мы в СМИ'
+#         verbose_name = 'Ссылка'
+#         ordering = ['-published']
 
 
 class Album(models.Model):

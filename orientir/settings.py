@@ -138,8 +138,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/static/'
 MEDIA_URL = '/static/media/'
-STATIC_ROOT = config.project_path + 'static/static/'#os.path.join(BASE_DIR, 'static', 'static')
-MEDIA_ROOT = config.project_path + 'static/media/'#os.path.join(BASE_DIR, 'static', 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static')
+#config.project_path + 'static/static/'#os.path.join(BASE_DIR, 'static', 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
+#config.project_path + 'static/media/'#os.path.join(BASE_DIR, 'static', 'media')
 
 #Cache
 # CACHES = {

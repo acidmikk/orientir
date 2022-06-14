@@ -12,6 +12,8 @@ urlpatterns = [
         path('', ProjectsList.as_view(), name='projects'),
     ])),
     path('about-us/', include([
+        path('people/people_<int:id>', person, name='expert'),
+        path('people/', workers, name='structure'),
         path('', about, name='about'),
     ])),
     path('galleries/', include([

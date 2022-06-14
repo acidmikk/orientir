@@ -11,18 +11,18 @@
 				<div class="sub">Будьте в курсе событий!</div>
 				<h2>Новости</h2>
 				<div class="push10"></div>
-					<div class="header-search">
+					<!--div class="header-search">
 						<form data-key="" action="" method="get" id="" name="search">
 							<input type="text" placeholder="Поиск по новостям" name="" value="" />
 							<input type="submit" />
 						</form>
-					</div>
+					</div-->
 					<div class="push25"></div>
 			</div>
 		</div>
 		<div class="push20"></div>
 		<div class="news-wrapper">
-			{% for new in last_news %}
+			{% for new in news %}
 			<div class="news-item">
 				<a class="link-block" href="{% url 'new' new.slug %}"></a>
 				<div class="news-img-wrap">

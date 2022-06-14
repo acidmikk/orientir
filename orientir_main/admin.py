@@ -33,11 +33,20 @@ class NewsAdmin(admin.ModelAdmin):
     image_img.allow_tags = True
 
 
+class PeopleAdminForm(forms.ModelForm):
+    description = forms.CharField(label='Описание', widget=CKEditorUploadingWidget())
+
+    class Meta:
+        model = People
+        fields = '__all__'
+
+
 @admin.register(People)
 class PeopleAdmin(admin.ModelAdmin):
     list_display = ('title', 'avatar', 'image_img')
     list_display_links = ('title', 'image_img')
     search_fields = ('title', 'content')
+    form = PeopleAdminForm
 
     def image_img(self, obj):
         if obj.avatar:
@@ -131,9 +140,9 @@ class SliderAdmin(admin.ModelAdmin):
     image_img.allow_tags = True
 
 
-@admin.register(Smi)
-class SmiAdmin(admin.ModelAdmin):
-    list_display = ('title', 'content', 'link', 'published')
-    list_display_links = ('title', 'content')
-    search_fields = ('title', 'content', 'link')
-    prepopulated_fields = {'slug': ('title',)}
+# @admin.register(Smi)
+# class SmiAdmin(admin.ModelAdmin):
+#     list_display = ('title', 'content', 'link', 'published')
+#     list_display_links = ('title', 'content')
+#     search_fields = ('title', 'content', 'link')
+#     prepopulated_fields = {'slug': ('title',)}

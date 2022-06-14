@@ -26,21 +26,22 @@
                     <!--=======================Participants item begin=======================-->
                     {% for expert in experts %}
                        <div class="experts-item">
+                        <a class="link-block" href="{{ expert.get_absolute_url }}"></a>
 						<div class="expert-inner">
 							<div class="image-wrapper">
-								{% if expert.avatar %}
-								<img src="{{ expert.avatar.url }}" alt="expert"/>
-							{% else %}
-								<img src="{% static 'orientir_main/images/empty.png' %}" alt="expert">
-							{% endif %}
+                                {% if expert.avatar %}
+                                    <img src="{{ expert.avatar.url }}" alt="expert"/>
+                                {% else %}
+                                    <img src="{% static 'orientir_main/images/empty.png' %}" alt="expert">
+                                {% endif %}
 							</div>
 							<div class="experts-text">
 								<div class="title-wrapper">
-									{{ expert.name }}
+									{{ expert.title }}
 								</div>
 								<div class="push10"></div>
 								<div class="description-wrapper">
-									{{ expert.description }}
+									{{ expert.content }}
 								</div>
 							</div>
 						</div>

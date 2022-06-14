@@ -44,13 +44,17 @@
 				</div>
 				<div class="subtitle">
 					<p>
-                        здесь текст
+                        В современное время сетевого общения важно сохранить навыки живого общения, понимания, уважения к другим.
+                        Мультикультурность и мультиязычность становятся важнейшими навыками молодых профессионалов.
+                        <br>
+                        Soft skills – это надпрофессиональные навыки, не связанные с профессиональной деятельностью или обязанностями человека.
+                        Они нужны, чтобы Вы смогли понимать других и сделать так, чтобы Вас лучше и быстрее понимали. Это поможет Вам работать в проектах и командах, быстрее решать задачи. Специалисты Центра работают над важнейшими задачами развития молодежи.
                     </p>
 				</div>
 				<a class="button" href="{% url 'about' %}">Подробнее</a>
 			</div>
 			<div class="content-image visible-lg visible-md">
-				<img src="{% static 'orientir_main/images/president.png' %}" alt="мб лого">
+				<!img src="{% static 'orientir_main/images/e' %}" alt="мб лого">
 			</div>
 		</div>
 	</div>
@@ -71,7 +75,7 @@
 					</div>
 					<div class="subtitle">
 						<p>
-							про проекты что-то
+
                         </p>
 					</div>
 				</div>
@@ -175,10 +179,10 @@
 						<div class="expert-inner">
 							<div class="image-wrapper">
 								{% if expert.avatar %}
-								<img src="{{ expert.avatar.url }}" alt="expert"/>
-							{% else %}
-								<img src="{% static 'orientir_main/images/empty.png' %}" alt="expert">
-							{% endif %}
+                                    <img src="{{ expert.avatar.url }}" alt="expert"/>
+                                {% else %}
+                                    <img src="{% static 'orientir_main/images/empty.png' %}" alt="expert">
+                                {% endif %}
 							</div>
 							<div class="experts-text">
 								<div class="title-wrapper">
@@ -186,7 +190,7 @@
 								</div>
 								<div class="push10"></div>
 								<div class="description-wrapper">
-									{{ expert.description }}
+									{{ expert.content }}
 								</div>
 							</div>
 						</div>

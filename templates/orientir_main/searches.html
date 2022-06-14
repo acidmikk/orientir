@@ -9,7 +9,7 @@
 		<h1>Исследования</h1>
 		<div class="push50"></div>
 		<div class="searches-wrapper section-item-wrapper">
-			{% for search in exploration_list %}
+			{% for search in searches %}
 			<a href="{{ search.get_absolute_url }}" class="section-item">
                 <div class="image-wrap">
                     {% if search.image %}
