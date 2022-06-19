@@ -146,14 +146,14 @@
                             {% if request.user.is_authenticated %}
                                 <li class="last"> {{user.username}} | <a href="{% url 'logout' %}">Выйти</a></li>
                             {% else %}
-                            <ul>
-                                <li>
-                                    <a href="{% url 'login' %}" class="signin">Войти</a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'registration' %}" class="regist">Регистрация</a>
-                                </li>
-                            </ul>
+                                <ul>
+                                    <li>
+                                        <a href="{% url 'login' %}" class="signin">Войти</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'registration' %}" class="regist">Регистрация</a>
+                                    </li>
+                                </ul>
                             {% endif %}
                         </li>
                     </ul>
