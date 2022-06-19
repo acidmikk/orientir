@@ -87,26 +87,6 @@ class Project(models.Model):
         ordering = ['-published']
 
 
-# class Smi(models.Model):
-#     title = models.CharField(max_length=150, verbose_name='Заголовок')
-#     content = models.CharField(max_length=260, verbose_name='Текст')
-#     link = models.URLField(verbose_name='Ссылка на источник')
-#     slug = models.SlugField(max_length=160, unique=True)
-#     published = models.DateField(db_index=True, verbose_name='Дата публикации')
-#     objects = SearchManager()
-#
-#     def get_absolute_url(self):
-#         return reverse('smi', kwargs={'slug': self.slug})
-#
-#     def __str__(self):
-#         return self.title
-#
-#     class Meta:
-#         verbose_name_plural = 'Мы в СМИ'
-#         verbose_name = 'Ссылка'
-#         ordering = ['-published']
-
-
 class Album(models.Model):
     title = models.CharField(max_length=95, verbose_name='Заголовок')
     image = models.ImageField(verbose_name='Фото', upload_to='album/%Y/%m/%d/', null=False, blank=False)
