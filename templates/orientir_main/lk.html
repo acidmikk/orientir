@@ -1,0 +1,101 @@
+
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}Ориентир | Личный кабинет{% endblock %}
+{% block content %}
+<section class="project-section lk-section">
+    <hr>
+    <div class="push40"></div>
+	<div class="container">
+		<div class="project-wrapper">
+			<div class="content">
+				<div class="project-header">
+					<div class="header-title">
+						<h2>Личный кабинет</h2>
+						<div class="push10"></div>
+						<div class="push25"></div>
+					</div>
+				</div>
+				<div class="lk-wrapper">
+					<div class="img-wrapp">
+						<img src="{% static 'rapir/images/president.png' %}">
+					</div>
+					<div class="information">
+						<div class="information-item">
+							<div class="information-inner">
+								<div><span>ФИО:</span> Смирнова Ольга Викторовна</div>
+								<div class="edit edit1">Изменить</div>
+							</div>
+							<form action="" name="form" class="form1 none">
+								<div class="form-group">
+									<input type="text" name="fio" class="form-control"/>
+								</div>								
+								<div>
+									<input type="submit" class="button btn" value="Сохранить" />
+								</div>
+							</form>
+						</div>
+						<div class="information-item">
+							<div class="information-inner">
+								<div><span>Email:</span> email@email.ru</div>
+								<div class="edit edit2">Изменить</div>
+							</div>
+							<form action="" name="form" class="form2 none">
+								<div class="form-group">
+									<input type="text" name="email" class="form-control"/>
+								</div>								
+								<div>
+									<input type="submit" class="button btn" value="Сохранить" />
+								</div>
+							</form>
+						</div>
+						<div class="information-item">
+							<div class="information-inner">
+								<div><span>Логин:</span> smirnova45</div>
+								<div class="edit edit3">Изменить</div>
+							</div>
+							<form action="" name="form" class="form3 none">
+								<div class="form-group">
+									<input type="text" name="login" class="form-control"/>
+								</div>								
+								<div>
+									<input type="submit" class="button btn" value="Сохранить" />
+								</div>
+							</form>
+						</div>
+						<div class="information-item">
+							<div class="information-inner">
+								<div><span>Пароль</span></div>
+								<div class="edit edit4">Изменить</div>
+							</div>
+							
+							<form action="" name="form" class="form4 none">
+								<div class="form-group">
+									<input type="password" name="pass" class="form-control"/>
+								</div>								
+								<div>
+									<input type="submit" class="button btn" value="Сохранить" />
+								</div>
+							</form>
+						</div>
+						<div class="information-item">
+							<div class="information-inner">
+								<div><span>Загрузить фотографию</span></div>
+								<form enctype="multipart/form-data" method="post">
+									<input type="file" name="photo" multiple accept="image/*,image/jpeg">
+									<input type="submit" class="button btn" value="Сохранить"></p>
+								</form>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+					
+		</div>
+		{% include 'rapir/pagination.html' %}
+		<div class="push50"></div>
+	</div>
+</section>
+
+{% endblock %}

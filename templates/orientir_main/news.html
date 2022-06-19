@@ -24,7 +24,7 @@
 		<div class="news-wrapper">
 			{% for new in news %}
 			<div class="news-item">
-				<a class="link-block" href="{% url 'new' new.slug %}"></a>
+				<a class="link-block" href="{% url 'main:new' new.slug %}"></a>
 				<div class="news-img-wrap">
 					{% if new.image %}
 						<img src="{{ new.image.url }}" alt="new">
@@ -42,7 +42,7 @@
 							<div class="news-title">
 								{{ new.title }}
 							</div>
-							<a class="" href="{% url 'new' new.slug %}">Читать далее <span>>></span></a>
+							<a class="" href="{% url 'main:new' new.slug %}">Читать далее <span>>></span></a>
 						</div>
 						<div class="annotation">
 							<div class="padding"></div>

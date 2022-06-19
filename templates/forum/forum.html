@@ -1,0 +1,118 @@
+
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}Ориентир | Форум{% endblock %}
+{% block content %}
+<section class="project-section forum-section">
+    <hr>
+    <div class="push40"></div>
+	<div class="container">
+		<div class="project-wrapper">
+			<div class="content">
+				<div class="project-header">
+					<div class="header-title">
+						<h2>Форум</h2>
+						<div class="push10"></div>
+						<div class="push25"></div>
+					</div>
+					<div class="subtitle">
+						<p>
+							Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы. Внезапно, некоторые особенности внутренней политики освещают чрезвычайно интересные.
+						</p>
+					</div>
+				</div>
+				<div class="section-item-wrapper">
+					<!--=======================Project item begin (2 item for preview)=======================-->
+					{% for discussion in discussions %}
+						<!--a href="{{ discussion.get_absolute_url }}" class="section-item">
+							<div class="img-wrap">
+								<img src="{{ discussion.image.url }}"/>
+							</div>
+							<div class="title-wrap">
+								<h3>{{ discussion.title }}</h3>
+								<div class="project-subtitle">
+									{{ discussion.subtitle }}
+								</div>
+								<div class="item-bottom">
+									<div class="button" href="{{ discussion.get_absolute_url }}">Обсудить</div>
+									<div class="date">{{ discussion.published|date:"d.m.Y" }}</div>
+								</div>
+							</div>
+						</a-->
+                    {% endfor %}
+					<a href="#" class="section-item">
+						<div class="img-wrap">
+							<img src="{% static 'rapir/images/about-one.jpg' %}"/>
+						</div>
+                        <div class="title-wrap">
+                            <h3>Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы.</h3>
+                            <div class="project-subtitle">
+								Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы.Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы.Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы.
+							</div>
+							<div class="item-bottom">
+								<div class="button" href="#">Обсудить</div>
+								<div class="date">23.04.22</div>
+							</div>
+                        </div>
+					</a>
+
+					<a href="#" class="section-item">
+						<div class="img-wrap">
+							<img src="{% static 'rapir/images/empty.png' %}"/>
+						</div>
+                        <div class="title-wrap">
+                            <h3>Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы.</h3>
+                            <div class="project-subtitle">
+								Предприниматели в сети интернет, инициированные 
+							</div>
+							<div class="item-bottom">
+								<div class="button" href="#">Обсудить</div>
+								<div class="date">23.04.22</div>
+							</div>
+                        </div>
+					</a>
+
+					<a href="#" class="section-item">
+						<div class="img-wrap">
+							<img src="{% static 'rapir/images/president.png' %}"/>
+						</div>
+                        <div class="title-wrap">
+                            <h3>Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы.</h3>
+                            <div class="project-subtitle">
+								Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы.Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы.Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы.
+							</div>
+							<div class="item-bottom">
+								<div class="button" href="#">Обсудить</div>
+								<div class="date">23.04.22</div>
+							</div>
+                        </div>
+					</a>
+					<a href="#" class="section-item">
+						<div class="img-wrap">
+							<img src="{% static 'rapir/images/back-about.jpg' %}"/>
+						</div>
+                        <div class="title-wrap">
+                            <h3>Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы.</h3>
+                            <div class="project-subtitle">
+								Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы.Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы.Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы.
+								
+							</div>
+							<div class="item-bottom">
+								<div class="button" href="#">Обсудить</div>
+								<div class="date">23.04.22</div>
+							</div>
+                        </div>
+					</a>
+					
+                    
+					<!--=======================Project item end=======================-->
+				</div>
+				{% include 'rapir/pagination.html' %}
+                <div class="push50"></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+

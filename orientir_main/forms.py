@@ -13,7 +13,8 @@ class RegisterUserForm(UserCreationForm):
     email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'class': 'form-control  required'}))
     username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'form-control  required'}))
     password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-control  required'}))
-    password2 = forms.CharField(label='Повтор пароля', widget=forms.PasswordInput(attrs={'class': 'form-control  required'}))
+    password2 = forms.CharField(label='Повтор пароля',
+                                widget=forms.PasswordInput(attrs={'class': 'form-control  required'}))
 
     class Meta:
         model = User

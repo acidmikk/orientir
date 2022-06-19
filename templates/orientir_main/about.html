@@ -56,7 +56,7 @@
                     <!--=======================Participants item begin=======================-->
                     <div class="gallery-element">
                         <a href="{% static 'orientir_main/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
-                            <img src="{% static 'orientir_main/images/prize-1.png' %}"> <!--Большое изображение-->
+                            <img src="{% static 'orientir_main/images/prize-1.png' %}" alt=""> <!--Большое изображение-->
                             <div class="zoom-gallery">
                                 <i class="fa fa-search-plus" aria-hidden="true"></i>
                             </div>
@@ -245,7 +245,7 @@
 					</p>
 				</div>
 				<div class="push15"></div>
-				<a class="button visible-lg visible-md" href="{% url 'structure' %}">Смотреть все</a>
+				<a class="button visible-lg visible-md" href="{% url 'main:structure' %}">Смотреть все</a>
 			</div>
 			<div class="participant-slider">
 				<!--=======================Participants item begin=======================-->
@@ -274,7 +274,7 @@
 				<!--=======================Participants item end=======================-->
 			</div>
 			<div class="button-wrap hidden-lg hidden-md">
-				<a class="button" href="{% url 'structure' %}">Смотреть все</a>
+				<a class="button" href="{% url 'main:structure' %}">Смотреть все</a>
 			</div>
 		</div>
 	</div>
