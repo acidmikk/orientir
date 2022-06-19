@@ -2,6 +2,8 @@ from django.urls import path, include
 from .views import *
 from .feeds import LatestFeedRSS
 
+app_name = 'main'
+
 urlpatterns = [
     path('news/', include([
         path('<slug:slug>', new, name='new'),

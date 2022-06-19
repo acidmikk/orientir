@@ -20,10 +20,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', include('orientir_main.urls')),
-    path('forum/', include('forum.urls')),
-    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('admin/', admin.site.urls),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('', include('orientir_main.urls', namespace='main')),
+    path('forum/', include('forum.urls', namespace='forum')),
     path('user-info/', orientir_core.user_info)
 ]
 

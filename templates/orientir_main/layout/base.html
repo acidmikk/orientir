@@ -27,7 +27,7 @@
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobmenu">
     <div class="logo-wrap">
-        <!--a href="{% url 'main' %}" class="logo-img-wrap">
+        <!--a href="{% url 'main:main' %}" class="logo-img-wrap">
             <img alt="img" src="{% static 'orientir_main/images/logo.webp' %}"/>
         </a-->
         <div class="name-company">
@@ -38,25 +38,25 @@
     <div class="mobile-menu-inner">
         <ul>
             <li>
-                <a href="{% url 'main' %}">Главная</a>
-            </li>
-            <!--li>
-                <a href="{% url 'about' %}">Об организации</a>
-            </li-->
-            <li>
-                <a href="{% url 'projects' %}">Проекты</a>
+                <a href="{% url 'main:main' %}">Главная</a>
             </li>
             <li>
-                <a href="{% url 'structure' %}">Состав</a>
+                <a href="{% url 'main:about' %}">Об организации</a>
             </li>
             <li>
-                <a href="{% url 'galleries' %}">Портфолио</a>
+                <a href="{% url 'main:projects' %}">Проекты</a>
             </li>
             <li>
-                <a href="{% url 'news' %}">Новости</a>
+                <a href="{% url 'main:structure' %}">Состав</a>
             </li>
             <li>
-                <a href="{% url 'contact' %}">Контакты</a>
+                <a href="{% url 'main:galleries' %}">Портфолио</a>
+            </li>
+            <li>
+                <a href="{% url 'main:news' %}">Новости</a>
+            </li>
+            <li>
+                <a href="{% url 'main:contact' %}">Контакты</a>
             </li>
         </ul>
     </div>
@@ -82,14 +82,14 @@
     <div class="push30"></div>
     <div class="mobile-menu-inner">
         {% if request.user.is_authenticated %}
-            <li class="last"> {{user.username}} | <a href="{% url 'logout' %}">Выйти</a></li>
+            <li class="last"> {{user.username}} | <a href="{% url 'main:logout' %}">Выйти</a></li>
         {% else %}
         <ul>
             <li>
-                <a href="{% url 'login' %}" class="signin">Войти</a>
+                <a href="{% url 'main:login' %}" class="signin">Войти</a>
             </li>
             <li>
-                <a href="{% url 'registration' %}" class="regist">Регистрация</a>
+                <a href="{% url 'main:registration' %}" class="regist">Регистрация</a>
             </li>
         </ul>
         {% endif %}
@@ -107,33 +107,33 @@
                 <nav class="top-menu visible-lg visible-md">
                     <ul>
                         <li>
-                            <a href="{% url 'main' %}">Главная</a>
-                        </li>
-                        <!--li>
-                            <a href="{% url 'about' %}">Об организации</a>
-                        </li-->
-                        <li>
-                            <a href="{% url 'projects' %}">Проекты</a>
+                            <a href="{% url 'main:main' %}">Главная</a>
                         </li>
                         <li>
-                            <a href="{% url 'structure' %}">Состав</a>
+                            <a href="{% url 'main:about' %}">Об организации</a>
                         </li>
                         <li>
-                            <a href="{% url 'galleries' %}">Галерея</a>
+                            <a href="{% url 'main:projects' %}">Проекты</a>
                         </li>
                         <li>
-                            <a href="{% url 'news' %}">Новости</a>
+                            <a href="{% url 'main:structure' %}">Состав</a>
                         </li>
                         <li>
-                            <a href="{% url 'contact' %}">Контакты</a>
+                            <a href="{% url 'main:galleries' %}">Галерея</a>
                         </li>
-                        <!--li>
-                            <a href="forum/">Форум</a>
-                        </li-->
+                        <li>
+                            <a href="{% url 'main:news' %}">Новости</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'main:contact' %}">Контакты</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'forum:boards' %}">Форум</a>
+                        </li>
 
                     </ul>
                     <div class="header-search none">
-                        <form data-key="" action="{% url 'search' %}" method="get" id="">
+                        <form data-key="" action="{% url 'main:search' %}" method="get" id="">
                             <input type="search" placeholder="Поиск по сайту" name="q" value="" />
                             <input type="submit" name="searchform"/>
                         </form>
@@ -144,14 +144,14 @@
                         <li>
                             <i class="fa fa-sign-in" aria-hidden="true"></i>
                             {% if request.user.is_authenticated %}
-                                <li class="last"> {{user.username}} | <a href="{% url 'logout' %}">Выйти</a></li>
+                                <li class="last"> {{user.username}} | <a href="{% url 'main:logout' %}">Выйти</a></li>
                             {% else %}
                                 <ul>
                                     <li>
-                                        <a href="{% url 'login' %}" class="signin">Войти</a>
+                                        <a href="{% url 'main:login' %}" class="signin">Войти</a>
                                     </li>
                                     <li>
-                                        <a href="{% url 'registration' %}" class="regist">Регистрация</a>
+                                        <a href="{% url 'main:registration' %}" class="regist">Регистрация</a>
                                     </li>
                                 </ul>
                             {% endif %}
@@ -166,7 +166,7 @@
         <div class="container">
             <div class="header-inner">
                 <div class="logo-wrap">
-                    <a href="{% url 'main' %}" class="logo-img-wrap">
+                    <a href="{% url 'main:main' %}" class="logo-img-wrap">
                         <!img src="{% static 'orientir_main/images/logo.webp' %}">
                     </a>
                     <div class="name-company">
@@ -204,7 +204,7 @@
         <div class="footer">
             <div class="footer-element">
                 <div class="logo-wrap">
-                    <a href="{% url 'main' %}" class="logo-img-wrap">
+                    <a href="{% url 'main:main' %}" class="logo-img-wrap">
                         <!img alt="img" src="{% static 'orientir_main/images/logo.webp' %}"/>
                     </a>
                     <div class="name-company">
@@ -219,22 +219,22 @@
                 <nav class="footer-menu">
                     <ul>
                         <li>
-                            <a href="{% url 'main' %}">Главная</a>
-                        </li>
-                        <!--li>
-                            <a href="{% url 'about' %}">Об организации</a>
-                        </li-->
-                        <li>
-                            <a href="{% url 'projects' %}">Проекты</a>
+                            <a href="{% url 'main:main' %}">Главная</a>
                         </li>
                         <li>
-                            <a href="{% url 'galleries' %}">Портфолио</a>
+                            <a href="{% url 'main:about' %}">Об организации</a>
                         </li>
                         <li>
-                            <a href="{% url 'news' %}">Новости</a>
+                            <a href="{% url 'main:projects' %}">Проекты</a>
                         </li>
                         <li>
-                            <a href="{% url 'contact' %}">Контакты</a>
+                            <a href="{% url 'main:galleries' %}">Портфолио</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'main:news' %}">Новости</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'main:contact' %}">Контакты</a>
                         </li>
 
                     </ul>
