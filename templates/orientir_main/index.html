@@ -11,10 +11,10 @@
 			<div class="header-img" style="background-image: url({{slide.image.url}});">
 				<div class="header-img-inner">
 					<h2>
-						{{ slide.title }}
+						{{ slide.title|truncatechars:45 }}
 					</h2>
 					<div class="describtion">
-						{{ slide.content }}
+						{{ slide.content|truncatechars:111 }}
 					</div>
 					<div class="button-wrapper">
 						<a href="#feedconsul" class="button">Бесплатная консультация</a>
@@ -54,7 +54,7 @@
 				<a class="button" href="{% url 'main:about' %}">Подробнее</a>
 			</div>
 			<div class="content-image visible-lg visible-md">
-				<!img src="{% static 'orientir_main/images/e' %}" alt="мб лого">
+				<img src="{% static 'orientir_main/images/ab.jpg' %}" alt="мб лого">
 			</div>
 		</div>
 	</div>
@@ -75,7 +75,7 @@
 					</div>
 					<div class="subtitle">
 						<p>
-
+							Нашей школой было реализовано множество проектов!
                         </p>
 					</div>
 				</div>
@@ -88,7 +88,7 @@
                             <div class="project-subtitle">
 								{{ project.subtitle }}
 							</div>
-							<div class="button" href="{{ project.get_absolute_url }}">Подробнее</div>
+							<div class="button">Подробнее</div>
                         </div>
 					</a>
                     {% endfor %}
