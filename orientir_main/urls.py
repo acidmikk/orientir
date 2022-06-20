@@ -26,6 +26,7 @@ urlpatterns = [
         path('registration/', RegisterUser.as_view(), name='registration'),
         path('login/', LoginUser.as_view(), name='login'),
         path('logout/', logout_user, name='logout'),
+        path('<str:username>', profile, name='profile')
     ])),
     path('structure/',  workers, name='structure'),
     path('search/', SearchList.as_view(), name='search'),

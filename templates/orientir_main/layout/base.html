@@ -82,7 +82,7 @@
     <div class="push30"></div>
     <div class="mobile-menu-inner">
         {% if request.user.is_authenticated %}
-            <li class="last"> {{user.username}} | <a href="{% url 'main:logout' %}">Выйти</a></li>
+            <li class="last"> <a href="{% url 'main:profile' user.username %}">{{user.username}}</a> | <a href="{% url 'main:logout' %}">Выйти</a></li>
         {% else %}
         <ul>
             <li>
@@ -142,18 +142,18 @@
                 <nav class="top-menu sign-menu visible-lg visible-md">
                     <ul>
                         <li>
-                            <i class="fa fa-sign-in" aria-hidden="true"></i>
                             {% if request.user.is_authenticated %}
-                                <li class="last"> {{user.username}} | <a href="{% url 'main:logout' %}">Выйти</a></li>
+                                <li class="last"> <a href="{% url 'main:profile' user.username %}">{{user.username}}</a> | <a href="{% url 'main:logout' %}">Выйти</a></li>
                             {% else %}
-                                <ul>
-                                    <li>
-                                        <a href="{% url 'main:login' %}" class="signin">Войти</a>
-                                    </li>
-                                    <li>
-                                        <a href="{% url 'main:registration' %}" class="regist">Регистрация</a>
-                                    </li>
-                                </ul>
+                                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                    <ul>
+                                        <li>
+                                            <a href="{% url 'main:login' %}" class="signin">Войти</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'main:registration' %}" class="regist">Регистрация</a>
+                                        </li>
+                                    </ul>
                             {% endif %}
                         </li>
                     </ul>
@@ -260,7 +260,7 @@
 <div class="footer-bottom-bar">
     <div class="container">
         <div class="footer-bottom-bar-inner">
-            <a href="{% url 'main:main' %}">здесь надпись ориентира<br> <br>Ориентир</a>
+            <a href="{% url 'main:main' %}">Ориентир</a>
             <div class="footer-bottom-bar-inner-end">
 	            <div>Сайт разработан <a href="https://telegram.me/revengel66">revengel</a> и <a href="https://telegram.me/acidmikk">acidmikk</a></div>
 	            <div class="push10"></div>
