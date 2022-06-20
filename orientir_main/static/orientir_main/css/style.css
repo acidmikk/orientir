@@ -914,9 +914,7 @@ p{
     padding-left: 30px;
     text-align: left;
     display: flex;
-    align-items: flex-end;
     justify-content: space-between;
-    flex-direction: column;
 }
 .project-section .subtitle{
     width: 50%;
