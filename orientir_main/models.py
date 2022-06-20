@@ -31,7 +31,7 @@ class News(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('new', kwargs={'slug': self.slug})
+        return reverse('main:new', kwargs={'slug': self.slug})
 
     class Meta:
         verbose_name_plural = 'Новости'
@@ -59,7 +59,7 @@ class People(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('expert', kwargs={'id': self.id})
+        return reverse('main:expert', kwargs={'id': self.id})
 
     class Meta:
         verbose_name_plural = 'Люди'
@@ -76,7 +76,7 @@ class Project(models.Model):
     objects = SearchManager()
 
     def get_absolute_url(self):
-        return reverse('project', kwargs={'slug': self.slug})
+        return reverse('main:project', kwargs={'slug': self.slug})
 
     def __str__(self):
         return self.title
@@ -97,7 +97,7 @@ class Album(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('gallery', kwargs={'slug': self.slug})
+        return reverse('main:gallery', kwargs={'slug': self.slug})
 
     class Meta:
         verbose_name_plural = 'Альбомы'

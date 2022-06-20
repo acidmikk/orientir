@@ -188,3 +188,7 @@ class LoginUser(LoginView):
 def logout_user(request):
     logout(request)
     return redirect('login')
+
+
+def profile(request, username):
+    return render(request, 'orientir_main/lk.html', {'user': User.objects.get(username=username)})
