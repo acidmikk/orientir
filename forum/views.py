@@ -43,6 +43,7 @@ class TopicView(ListView):
         topic = Topic.objects.get(slug=self.kwargs['slug'])
         context['title'] = topic.subject
         context['subtitle'] = topic.subtitle
+        context['date'] = topic.last_update
         return context
 
     def get_queryset(self):
@@ -50,25 +51,25 @@ class TopicView(ListView):
         return Post.objects.filter(topic=self.topic)
 
 
-@login_required
-def new_topic(request, pk):
-    board = get_object_or_404(Board, pk=pk)
-    if request.method == 'POST':
-        form = NewTopicForm(request.POST)
-        if form.is_valid():
-            topic = form.save(commit=False)
-            topic.board = board
-            topic.starter = request.user  # <- here
-            topic.save()
-            Post.objects.create(
-                message=form.cleaned_data.get('message'),
-                topic=topic,
-                created_by=request.user  # <- and here
-            )
-            return redirect('topic_posts', pk=pk, topic_pk=topic.pk)
-    else:
-        form = NewTopicForm()
-    return render(request, 'new_topic.html', {'board': board, 'form': form})
+# @login_required
+# def new_topic(request, pk):
+#     board = get_object_or_404(Board, pk=pk)
+#     if request.method == 'POST':
+#         form = NewTopicForm(request.POST)
+#         if form.is_valid():
+#             topic = form.save(commit=False)
+#             topic.board = board
+#             topic.starter = request.user  # <- here
+#             topic.save()
+#             Post.objects.create(
+#                 message=form.cleaned_data.get('message'),
+#                 topic=topic,
+#                 created_by=request.user  # <- and here
+#             )
+#             return redirect('topic_posts', pk=pk, topic_pk=topic.pk)
+#     else:
+#         form = NewTopicForm()
+#     return render(request, 'new_topic.html', {'board': board, 'form': form})
 
 
 @login_required
