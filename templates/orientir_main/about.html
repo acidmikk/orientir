@@ -4,23 +4,23 @@
 {% block content %}
 <hr>
 <div class="push30"></div>
-{% if about.content1 %}
     <section class="about-part about-part-one">
         <div class="container">
             <div class="about-part-inner">
                 <div>
                     <h1>Об организации</h1>
                 </div>
+                {% if about.content1 %}
                 <div class="content">
                     <div class="about-image">
                         <img src="{{ about.image1.url }}" alt=""> <!--Картинка для первой секции страницы-->
                     </div>
                     {{ about.content1 | safe }} 
                 </div>
+                {% endif %}
             </div>
         </div>
     </section>
-{% endif %}
 <div class="participant-page">
     <section class="participant-section">
         <div class="push50"></div>
@@ -150,28 +150,30 @@
 			</div>
 			<div class="participant-slider">
 				<!--=======================Participants item begin=======================-->
-				{% for expert in experts %}
-                    <div class="experts-item">
-                        <div class="expert-inner">
-                            <div class="image-wrapper">
-                                {% if expert.avatar %}
-                                    <img src="{{ expert.avatar.url }}" alt="expert"/>
-                                {% else %}
-                                    <img src="{% static 'orientir_main/images/empty.png' %}" alt="expert">
-                                {% endif %}
-                            </div>
-                            <div class="experts-text">
-                                <div class="title-wrapper">
-                                    {{ expert.name }}
-                                </div>
-                                <div class="push10"></div>
-                                <div class="description-wrapper">
-                                    {{ expert.description }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
+                {% for expert in experts %}
+                <div class="experts-item">
+                 <a class="link-block" href="{{ expert.get_absolute_url }}"></a>
+                 <div class="expert-inner">
+                     <div class="image-wrapper">
+                         {% if expert.avatar %}
+                             <img src="{{ expert.avatar.url }}" alt="expert"/>
+                         {% else %}
+                             <img src="{% static 'orientir_main/images/empty.png' %}" alt="expert">
+                         {% endif %}
+                     </div>
+                     <div class="experts-text">
+                         <div class="title-wrapper">
+                             {{ expert.title }}
+                         </div>
+                         <div class="push10"></div>
+                         <div class="description-wrapper">
+                             {{ expert.content }}
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             {% endfor %}
+
 				<!--=======================Participants item end=======================-->
 			</div>
 			<div class="button-wrap hidden-lg hidden-md">
