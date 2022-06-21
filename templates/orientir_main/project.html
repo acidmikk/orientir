@@ -6,15 +6,12 @@
 <section class="event-page-section">
 	<div class="container">
 		<div class="event-page-wrapper">
-			<div class="push20"></div>
 			<h1>{{ project.title }}</h1>
-			<div class="push20"></div>
-            <div class="news-img visible-lg visible-md">
+            <div class="news-img">
                 {% if project.image %}
 				    <img src="{{ project.image.url }}" alt="new">
                 {% endif %}
 			</div>
-            <div class="push20"></div>
 			<div class="content">
 				<p>{{ project.content | safe }}</p>
 			</div>

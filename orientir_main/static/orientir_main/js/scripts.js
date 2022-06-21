@@ -131,12 +131,13 @@ $(function(){
             }
             }
         });
+
 	 //----------------------------ЦИФРЫ!!!!!!!!-----------------------------------------------------
 	     $('.num1').viewportChecker({
             classToAdd: 'visible animated fadeInUp',
             offset: 100,
             callbackFunction: function(){
-                $('#num1').animateNumber({ number: 205 },2500); //КОЛЛИЧЕСТВО ПРОЕКТОВ
+                $('#num1').animateNumber({ number: 11 },2500); //КОЛЛИЧЕСТВО ПРОЕКТОВ
             }
         });
         
@@ -144,7 +145,7 @@ $(function(){
             classToAdd: 'visible animated fadeInUp',
             offset: 100,
             callbackFunction: function(){
-                $('#num2').animateNumber({ number: 105 },2500);  //КОЛЛИЧЕСТВО ЧЕЛОВЕК
+                $('#num2').animateNumber({ number: 4112 },2500);  //КОЛЛИЧЕСТВО ЧЕЛОВЕК
             }
         });
         
@@ -152,10 +153,10 @@ $(function(){
             classToAdd: 'visible animated fadeInUp',
             offset: 100,
             callbackFunction: function(){
-                $('#num3').animateNumber({ number: 3 },1200);//СКОЛЬКО ЛЕТ
+                $('#num3').animateNumber({ number: new Date().getFullYear()-2017 },1200);//СКОЛЬКО ЛЕТ
             }
         });
-
+        
           // validation
         
           $('.rf').each(function(){

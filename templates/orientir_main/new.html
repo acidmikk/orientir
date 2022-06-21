@@ -6,31 +6,51 @@
 <section class="news-page-section">
 	<div class="container">
 		<div class="news-page-wrapper">
-			<div class="push50"></div>
-			<div class="news-img visible-lg visible-md">
-                {% if new.image %}
-				    <img src="{{ new.image.url }}" alt="new">
-                {% endif %}
+			<div class="push50 hidden-xs"></div>
+			<div class="push20 visible-xs"></div>
+			<div class="news-page-inner">
+				<div class="new-content-wrapper">
+					<div class="news-img visible-lg visible-md">
+						{% if new.image %}
+							<img src="{{ new.image.url }}" alt="new">
+						{% endif %}
+					</div>
+					<div class="new-content-inner">
+						<h1>{{ new.title }}</h1>
+						<h4>{{ new.published|date:"d.m.Y" }}</h4>
+						<div class="push20"></div>
+						<h3>{{ new.mini_content }}</h3>
+						<div class="push20"></div>
+						<div class="news-img hidden-lg hidden-md">
+							{% if new.image %}
+								<img src="{{ new.image.url }}" alt="new">
+							{% endif %}
+						</div>
+						<div class="content">
+							<p>{{ new.content | safe }}</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="news-gallery">
+					{% for picture in gallery %}
+					<div class="gallery-element">
+						<a href="{{ picture.image.url }}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
+							<img src="{{ picture.image.url }}"> <!--Большое изображение-->
+							<div class="zoom-gallery">
+								<i class="fa fa-search-plus" aria-hidden="true"></i>
+							</div>
+						</a>
+					</div>
+					{% endfor %}
+				</div>
+				
 			</div>
-			<h1>{{ new.title }}</h1>
-			<div class="push20"></div>
-			<h4>{{ new.published|date:"d.m.Y" }}</h4>
-			<div class="push20"></div>
-			<h3>{{ new.mini_content }}</h3>
-			<div class="push20"></div>
-			<div class="news-img hidden-lg hidden-md">
-				{% if new.image %}
-				    <img src="{{ new.image.url }}" alt="new">
-                {% endif %}
-			</div>
-			<div class="content">
-				<p>{{ new.content | safe }}</p>
-            </div>
-			<div class="push20"></div>
+			
             {% if new.file %}
                 <iframe id="pres" src="{{ new.file.url }}"></iframe>
             {% endif %}
-			<div class="push50"></div>
+
 		</div>
 	</div>
 </section>

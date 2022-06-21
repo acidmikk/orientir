@@ -2,19 +2,20 @@
 {% load static %}
 {% block title %}Ориентир | {{ expert.title }}{% endblock %}
 {% block content %}
+<hr>
         <div class="about-exp-wrapper">
             <div class="container">
                 <div class="push50"></div>
 
                 <div class="about-exp-inner">
                     <div class="about-exp-image visible-xs">
-                        {% if expert.image %}
+                        {% if expert.avatar %}
                             <img src="{{ expert.avatar.url }}" alt="Эксперт"/>
                         {% endif %}
                     </div>
                     <div class="about-exp-text ">
                         <div class="about-exp-image hidden-xs">
-                            {% if expert.image %}
+                            {% if expert.avatar %}
                                 <img src="{{ expert.avatar.url }}" alt="Эксперт"/>
                             {% endif %}
                         </div>

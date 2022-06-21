@@ -28,6 +28,17 @@ a:focus{
 .none{
 	display: none !important;
 }
+.main-wrapper-middle{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.main-wrapper{
+    flex-grow: 1;
+}
+.footer-wrapper-main{
+    flex-shrink: 0;
+}
 
 /************************ mob-menu begin ************/
 .menu-button{
@@ -349,6 +360,7 @@ a:focus{
 	font-size: 21px;
 	color: #9e9e9e;
     line-height: 30px;
+    display: block;
 }
 .name-company span{
 	font-weight: bold;
@@ -915,6 +927,7 @@ p{
     text-align: left;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 .project-section .subtitle{
     width: 50%;
@@ -1034,7 +1047,7 @@ p{
     font-weight: bold;
     margin-bottom: 20px;
     font-family: 'Ubuntu', sans-serif;
-    color:#000;
+    color: #5b5b5b;
 }
 .project-section .subtitle,
 .events-section .subtitle{
@@ -1222,7 +1235,7 @@ p{
 
 /*num-section begin*/
 .num-section{
-	background-image: url("../images/num-back.jfif");
+	background-image: url("../images/num-back.jpg");
 	background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -1308,6 +1321,14 @@ p{
     background: #00000000;
     padding: 0 20px;
     height: auto!important;
+    display: block;
+}
+.expert-inner:hover .title-wrapper{
+    color: #ff5168;
+    -webkit-transition: all 200ms ease-out;
+    -moz-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
 }
 .participant-wrapper .expert-inner{
     display: flex;
@@ -1408,9 +1429,13 @@ p{
     color: #fff;
 }
 .contacts-index-section .contacts-item-form{
-    padding: 0;
+    padding: 50px;
+    background: #bd4252;
 }
-
+.contacts-item-phone .fa{
+    font-size: 25px;
+    margin-right: 10px;
+}
 .form-group:last-child{
     margin: 0;
 }
@@ -1679,11 +1704,13 @@ textarea{
 }
 .about-exp-text{
     width: 100%;
+    text-align: left;
 }
 .about-exp-image img{
     z-index: 20;
     position: relative;
     max-width: 400px;
+    width: 100%;
 }
 
 .about-exp-image{
@@ -1695,7 +1722,7 @@ textarea{
 .about-exp-image:before {
     bottom: -30px;
     right: -30px;
-    background: #12437c;
+    background: #ff5168;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -1719,7 +1746,7 @@ textarea{
 .about-exp-text h2{
     font-size: 20px;
     margin-bottom: 20px;
-    color: #12437c;
+    color: #a03443;
 }
 /* ./ about-exp-wrapper*/
 h2{
@@ -2062,6 +2089,8 @@ h1{
     min-height: 300px;
     height: 300px;
     border-radius: 10px;
+    overflow: hidden;
+
 }
 .news-img-wrap img{
     min-height: 100%;
@@ -2096,7 +2125,7 @@ h1{
 }
 .news-text-inner{
     width: 100%;
-    height: 150px;
+    height: 147px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -2189,9 +2218,10 @@ h1{
 /* news-page-section*/
 .news-img{
     float: left;
-    margin-right: 20px;
+    margin-right: 10px;
     margin-bottom: 10px;
-    max-width: 600px;
+    max-width: 400px;
+    padding-right: 20px;
 }
 .news-page-section h3{
     font-size: 20px;
@@ -2201,6 +2231,23 @@ h1{
     color: #ff5168;
     font-size: 16px;
 }
+.news-gallery{
+    /*display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;*/
+}
+.news-gallery .gallery-element{
+    min-height: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 15%;
+    float: left;
+    margin-right: 19px;
+    margin-bottom: 20px;
+}
+
+
 /*./ news-page-section*/
 
 
@@ -2803,6 +2850,14 @@ margin-bottom: 0;
     .news-item:hover .news-text-inner{
         
     }
+    .news-img{
+        margin-right: 42px;
+    }
+    .news-gallery .gallery-element{
+        width: 18.5%;
+        float: left;
+        margin-right: 16px;
+    }
 }
 @media (max-width: 1259px) {
     .element-slider{
@@ -2921,6 +2976,14 @@ margin-bottom: 0;
     .contacts-item-adress, .contacts-item-phone{
         padding: 30px 20px;
     }
+    .news-img{
+        margin-right: 13px;
+    }
+    .news-gallery .gallery-element {
+        width: 17%;
+        float: left;
+        margin-right: 25px;
+    }
 }
 
 @media (max-width: 1029px) {
@@ -2933,6 +2996,14 @@ margin-bottom: 0;
     .news-img-wrap{
         min-height: 250px;
     }
+    .news-gallery .gallery-element {
+        width: 13%;
+        float: left;
+        margin-right: 10px;
+        min-height: 150px;
+    height: 150px;
+    }
+
     
 }
 @media (max-width: 1082px) {
@@ -2940,6 +3011,9 @@ margin-bottom: 0;
 
 }
 @media (max-width: 991px) {
+    .news-gallery{
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+    }
 	.slider-one {
 		margin: 0px auto 10px !important;
 	}
@@ -3006,7 +3080,7 @@ margin-bottom: 0;
         grid-template-columns: repeat(2, 1fr);
     }
     .news-img{
-    	float:none;
+    	
     	margin-right:0;
     }
      .mass-media-item{
@@ -3109,7 +3183,7 @@ margin-bottom: 0;
         grid-template-columns: 1fr;
     }
     .contacts-index-section .contacts-item{
-        
+        padding: 50px;
     }
     .forum-section .title-wrap{
         width: 90%;
@@ -3137,12 +3211,25 @@ margin-bottom: 0;
     }
 
 }
-@media (max-width: 907px) {
-
+@media (max-width: 939px) {
+    .news-gallery .gallery-element {
+        width: 15%;
+    }
 }
 @media (max-width: 823px) {
    
-
+    .news-gallery{
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        display: grid;
+        grid-gap: 20px;
+    }
+    .news-gallery .gallery-element{
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .news-page-inner{
+        display: grid;
+    }
 }
 @media (max-width: 780px) {
 	.mass-medis-item{
@@ -3152,6 +3239,7 @@ margin-bottom: 0;
 
 }
 @media (max-width: 767px) {
+    
 	.wrap-carousel-one{
 		padding-right: 0px;
 	}
@@ -3227,9 +3315,12 @@ margin-bottom: 0;
 
     }
     .about-exp-image{
-        margin-left:0;
-        margin-right: 50px;
+        margin: 0;
+        margin-bottom: 60px;
         float: left;
+    }
+    .about-exp-inner{
+        justify-content: center;
     }
     .about-exp-inner{
 
@@ -3390,7 +3481,18 @@ margin-bottom: 0;
     .img-wrapp{
         margin: 0;
     }
-
+    .news-gallery{
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        display: grid;
+        grid-gap: 20px;
+    }
+    .news-gallery .gallery-element{
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .news-page-inner{
+        display: grid;
+    }
 }
 @media (max-width: 700px) {
 	.participant-wrapper .experts-item{
@@ -3490,6 +3592,9 @@ margin-bottom: 0;
     }
     .information .form-group{
         margin-top: 10px;
+    }
+    .news-gallery{
+        grid-template-columns: 1fr 1fr; 
     }
 }
 @media (max-width: 500px) {
@@ -3721,6 +3826,9 @@ margin-bottom: 0;
     }
     .contacts-item .social{
         margin-top: 20px;   
+    }
+    .news-gallery{
+        grid-template-columns: 1fr; 
     }
 
 }

@@ -5,14 +5,17 @@
 <hr>
 <div class="push30"></div>
 {% if about.content1 %}
-    <section class="about-part about-part-one"  style="background-image: url({{ about.image1.url }});"> <!Хз, как прописывать путь до картинок в атриботу стилей, но оставлю пока так>
+    <section class="about-part about-part-one">
         <div class="container">
             <div class="about-part-inner">
-                <div class="content">
-                    {{ about.content1 | safe }} <!цк едитор тут для того, чтобы можно было ентерами отделять куски текста друг от друга>
+                <div>
+                    <h1>Об организации</h1>
                 </div>
-                <div class="about-image">
-                    <img src="{{ about.image1.url }}" alt=""> <!Картинка для первой секции страницы>
+                <div class="content">
+                    <div class="about-image">
+                        <img src="{{ about.image1.url }}" alt=""> <!--Картинка для первой секции страницы-->
+                    </div>
+                    {{ about.content1 | safe }} 
                 </div>
             </div>
         </div>
@@ -49,11 +52,6 @@
                         </a>
                     </div>
 				    {% endfor %}
-
-                    <!--=======================Participants item end=======================-->
-                </div>
-                <div class="prize-wrap-slider visible-xs">
-                    <!--=======================Participants item begin=======================-->
                     <div class="gallery-element">
                         <a href="{% static 'orientir_main/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
                             <img src="{% static 'orientir_main/images/prize-1.png' %}" alt=""> <!--Большое изображение-->
@@ -62,94 +60,13 @@
                             </div>
                         </a>
                     </div>
-                    <div class="gallery-element">
-                        <a href="{% static 'orientir_main/images/prize-2.jpg' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
-                            <img src="{% static 'orientir_main/images/prize-2.jpg' %}"> <!--Большое изображение-->
-                            <div class="zoom-gallery">
-                                <i class="fa fa-search-plus" aria-hidden="true"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-element">
-                        <a href="{% static 'orientir_main/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
-                            <img src="{% static 'orientir_main/images/prize-1.png' %}"> <!--Большое изображение-->
-                            <div class="zoom-gallery">
-                                <i class="fa fa-search-plus" aria-hidden="true"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-element">
-                        <a href="{% static 'orientir_main/images/prize-2.jpg' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
-                            <img src="{% static 'orientir_main/images/prize-2.jpg' %}"> <!--Большое изображение-->
-                            <div class="zoom-gallery">
-                                <i class="fa fa-search-plus" aria-hidden="true"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-element">
-                        <a href="{% static 'orientir_main/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
-                            <img src="{% static 'orientir_main/images/prize-1.png' %}"> <!--Большое изображение-->
-                            <div class="zoom-gallery">
-                                <i class="fa fa-search-plus" aria-hidden="true"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-element">
-                        <a href="{% static 'orientir_main/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
-                            <img src="{% static 'orientir_main/images/prize-1.png' %}"> <!--Большое изображение-->
-                            <div class="zoom-gallery">
-                                <i class="fa fa-search-plus" aria-hidden="true"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-element">
-                        <a href="{% static 'orientir_main/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
-                            <img src="{% static 'orientir_main/images/prize-1.png' %}"> <!--Большое изображение-->
-                            <div class="zoom-gallery">
-                                <i class="fa fa-search-plus" aria-hidden="true"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-element">
-                        <a href="{% static 'orientir_main/images/prize-2.jpg' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
-                            <img src="{% static 'orientir_main/images/prize-2.jpg' %}"> <!--Большое изображение-->
-                            <div class="zoom-gallery">
-                                <i class="fa fa-search-plus" aria-hidden="true"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-element">
-                        <a href="{% static 'orientir_main/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
-                            <img src="{% static 'orientir_main/images/prize-1.png' %}"> <!--Большое изображение-->
-                            <div class="zoom-gallery">
-                                <i class="fa fa-search-plus" aria-hidden="true"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-element">
-                        <a href="{% static 'orientir_main/images/prize-2.jpg' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
-                            <img src="{% static 'orientir_main/images/prize-2.jpg' %}"> <!--Большое изображение-->
-                            <div class="zoom-gallery">
-                                <i class="fa fa-search-plus" aria-hidden="true"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-element">
-                        <a href="{% static 'orientir_main/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
-                            <img src="{% static 'orientir_main/images/prize-1.png' %}"> <!--Большое изображение-->
-                            <div class="zoom-gallery">
-                                <i class="fa fa-search-plus" aria-hidden="true"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-element">
-                        <a href="{% static 'orientir_main/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
-                            <img src="{% static 'orientir_main/images/prize-1.png' %}"> <!--Большое изображение-->
-                            <div class="zoom-gallery">
-                                <i class="fa fa-search-plus" aria-hidden="true"></i>
-                            </div>
-                        </a>
-                    </div>
+                   
+
+                    <!--=======================Participants item end=======================-->
+                </div>
+                <div class="prize-wrap-slider visible-xs">
+                    <!--=======================Participants item begin=======================-->
+                  
                     <!--=======================Participants item end=======================-->
                 </div>
             </div>
@@ -157,28 +74,12 @@
         <div class="push50"></div>
     </section>
 </div>
-    {% if about.content3 %}
-        <section class="about-part about-part-three" style="background-image: url({{ about.image3.url }});"><!--Картинка для третьей секции страницы-->
-            <div class="push40 hidden-sm hidden-xs"></div>
-            <div class="container">
-                <div class="about-part-inner">
-                    <div class="content">
-                        {{ about.content3 | safe }}   <!--цк едитор тут для того, чтобы можно было ентерами отделять куски текста друг от друга-->
-                    </div>
-                    <div class="about-image">
-                        <img src="{{ about.image3.url }}" alt=""> <!--Картинка для третьей секции страницы-->
-                    </div>
-                </div>
-            </div>
-            <div class="push40 hidden-sm hidden-xs"></div>
-        </section>
-    {% endif %}
-<section class="about-part about-part-three" style="background-image: url({{ about.image3.url }});"><!--Картинка для третьей секции страницы-->
+<section class="about-part about-part-three" ><!--Картинка для третьей секции страницы-->
     <div class="push20 hidden-sm hidden-xs"></div>
     <div class="container">
         <div class="about-part-inner about-part-inner-two">
             <div class="content">
-                <p>Тщательные исследования конкурентов представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть объявлены нарушающими общечеловеческие нормы этики и морали. Мы вынуждены отталкиваться от того, что высокое качество позиционных исследований говорит о возможностях как самодостаточных, так и внешне зависимых концептуальных решений. Современные технологии достигли такого уровня, что внедрение современных методик предопределяет высокую востребованность соответствующих условий активизации. Таким образом, сложившаяся структура организации прекрасно подходит для реализации форм воздействия. Лишь непосредственные участники технического прогресса будут ограничены исключительно образом мышления. Задача организации, в особенности же семантический разбор внешних противодействий, в своём классическом представлении, допускает внедрение переосмысления внешнеэкономических политик.</p>   <!--цк едитор тут для того, чтобы можно было ентерами отделять куски текста друг от друга-->
+                {{ about.content2 | safe }} 
             </div>
         </div>
     </div>

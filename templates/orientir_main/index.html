@@ -75,7 +75,7 @@
 					</div>
 					<div class="subtitle">
 						<p>
-							Нашей школой было реализовано множество проектов!
+							Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы. Внезапно, некоторые особенности внутренней политики освещают чрезвычайно интересные.
                         </p>
 					</div>
 				</div>
@@ -175,7 +175,7 @@
 			<div class="participant-slider">
 				<!--=======================Participants item begin=======================-->
 				{% for expert in experts %}
-					<div class="experts-item">
+					<a href="{{ expert.get_absolute_url }}" class="experts-item">
 						<div class="expert-inner">
 							<div class="image-wrapper">
 								{% if expert.avatar %}
@@ -186,7 +186,7 @@
 							</div>
 							<div class="experts-text">
 								<div class="title-wrapper">
-									{{ expert.name }}
+									{{ expert.title }}
 								</div>
 								<div class="push10"></div>
 								<div class="description-wrapper">
@@ -194,7 +194,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</a>
                 {% endfor %}
 				<!--=======================Participants item end=======================-->
 			</div>
@@ -244,8 +244,8 @@
 				<img src="{% static 'orientir_main/images/phone.png' %}"/>
 			</div>
 			<div class="title-wrap">
-				8 (937) 271-11-22 <br>
-				is_orientir@mail.ru
+				<i class="fa fa-phone" aria-hidden="true"></i>8 (937) 271-11-22 <br>
+				<i class="fa fa-envelope" aria-hidden="true"></i>is_orientir@mail.ru
 			</div>
 		</div>
 	</div>
@@ -298,6 +298,7 @@
 		<div class="push50"></div>
 		</div>
 	</div>
+	<div class="push50"></div>
 </section>
 <!--------------------------------------------------------------News end-------------------------------------------------------------->
 

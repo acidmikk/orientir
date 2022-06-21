@@ -30,10 +30,10 @@
         <!--a href="{% url 'main:main' %}" class="logo-img-wrap">
             <img alt="img" src="{% static 'orientir_main/images/logo.webp' %}"/>
         </a-->
-        <div class="name-company">
+        <a href="{% url 'main:main' %}" class="name-company">
             <span>Центр Ориентир</span><br>
             Soft-skills
-        </div>
+        </a>
     </div>
     <div class="mobile-menu-inner">
         <ul>
@@ -99,180 +99,185 @@
 <div class="overlay"></div>
 <!-- /. Mobile menu -->
 
-
-<div class="main-wrapper">
-    <div class="header-wrapper">
-        <div class="container">
-            <div class="header">
-                <nav class="top-menu visible-lg visible-md">
-                    <ul>
-                        <li>
-                            <a href="{% url 'main:main' %}">Главная</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'main:about' %}">Об организации</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'main:projects' %}">Проекты</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'main:structure' %}">Состав</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'main:galleries' %}">Галерея</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'main:news' %}">Новости</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'main:contact' %}">Контакты</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'forum:boards' %}">Диалоговая антикоррупционная площадка</a>
-                        </li>
-
-                    </ul>
-                    <div class="header-search none">
-                        <form data-key="" action="{% url 'main:search' %}" method="get" id="">
-                            <input type="search" placeholder="Поиск по сайту" name="q" value="" />
-                            <input type="submit" name="searchform"/>
-                        </form>
-                    </div>
-                </nav>
-                <nav class="top-menu sign-menu visible-lg visible-md">
-                    <ul>
-                        <li>
-                            {% if request.user.is_authenticated %}
-                                <li class="last"> <a href="{% url 'main:profile' user.username %}">{{user.username}}</a> | <a href="{% url 'main:logout' %}">Выйти</a></li>
-                            {% else %}
-                                <i class="fa fa-sign-in" aria-hidden="true"></i>
-                                    <ul>
-                                        <li>
-                                            <a href="{% url 'main:login' %}" class="signin">Войти</a>
-                                        </li>
-                                        <li>
-                                            <a href="{% url 'main:registration' %}" class="regist">Регистрация</a>
-                                        </li>
-                                    </ul>
-                            {% endif %}
-                        </li>
-                    </ul>
-                </nav>
+<div class="main-wrapper-middle">
+    <div class="main-wrapper">
+        <div class="header-wrapper">
+            <div class="container">
+                <div class="header">
+                    <nav class="top-menu visible-lg visible-md">
+                        <ul>
+                            <li>
+                                <a href="{% url 'main:main' %}">Главная</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'main:about' %}">Об организации</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'main:projects' %}">Проекты</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'main:structure' %}">Состав</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'main:galleries' %}">Галерея</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'main:news' %}">Новости</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'main:contact' %}">Контакты</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'forum:boards' %}">Диалоговая антикоррупционная площадка</a>
+                            </li>
+    
+                        </ul>
+                        <div class="header-search none">
+                            <form data-key="" action="{% url 'main:search' %}" method="get" id="">
+                                <input type="search" placeholder="Поиск по сайту" name="q" value="" />
+                                <input type="submit" name="searchform"/>
+                            </form>
+                        </div>
+                    </nav>
+                    <nav class="top-menu sign-menu visible-lg visible-md">
+                        <ul>
+                            <li>
+                                {% if request.user.is_authenticated %}
+                                    <li class="last"> <a href="{% url 'main:profile' user.username %}">{{user.username}}</a> | <a href="{% url 'main:logout' %}">Выйти</a></li>
+                                {% else %}
+                                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                        <ul>
+                                            <li>
+                                                <a href="{% url 'main:login' %}" class="signin">Войти</a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'main:registration' %}" class="regist">Регистрация</a>
+                                            </li>
+                                        </ul>
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="header-wrapper-push"></div>
-    <section class="header-section">
-        <div class="container">
-            <div class="header-inner">
-                <div class="logo-wrap">
-                    <a href="{% url 'main:main' %}" class="logo-img-wrap">
-                        <!img src="{% static 'orientir_main/images/logo.webp' %}">
-                    </a>
-                    <div class="name-company">
-                        <span>Центр Ориентир</span><br>
-                        Soft-skills
+        <div class="header-wrapper-push"></div>
+        <section class="header-section">
+            <div class="container">
+                <div class="header-inner">
+                    <div class="logo-wrap">
+                        <a href="{% url 'main:main' %}" class="logo-img-wrap">
+                            <!img src="{% static 'orientir_main/images/logo.webp' %}">
+                        </a>
+                        <a href="{% url 'main:main' %}"  class="name-company">
+                            <span>Центр Ориентир</span><br>
+                            Soft-skills
+                        </a>
                     </div>
-                </div>
-                <div class="header-contacts">
-                    <div class="header-adress">
-                        <?xml version="1.0" ?><svg enable-background="new 0 0 64 64" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Glyph_copy_2"><path d="M42.138,23.162c0-5.566-4.548-10.094-10.138-10.094s-10.138,4.528-10.138,10.094S26.41,33.256,32,33.256   S42.138,28.728,42.138,23.162z"/><path d="M31.995,63.996l4.109-5.375c4.289-5.678,18.282-25.024,18.282-35.601C54.387,9.253,45.391,0.004,32,0.004   S9.613,9.253,9.613,23.021c0,11.39,16.432,33.166,18.301,35.605L31.995,63.996z M17.862,23.162c0-7.771,6.342-14.094,14.138-14.094   s14.138,6.323,14.138,14.094S39.796,37.256,32,37.256S17.862,30.934,17.862,23.162z"/></g></svg>
-                        <div class="contacts-wrap">
-                            <span>г. Ульяновск</span><br>
-                            пр-т Ульяновский, д 13, 432072  <br>
-                            ИНН: 7328096514
+                    <div class="header-contacts">
+                        <div class="header-adress">
+                            <?xml version="1.0" ?><svg enable-background="new 0 0 64 64" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Glyph_copy_2"><path d="M42.138,23.162c0-5.566-4.548-10.094-10.138-10.094s-10.138,4.528-10.138,10.094S26.41,33.256,32,33.256   S42.138,28.728,42.138,23.162z"/><path d="M31.995,63.996l4.109-5.375c4.289-5.678,18.282-25.024,18.282-35.601C54.387,9.253,45.391,0.004,32,0.004   S9.613,9.253,9.613,23.021c0,11.39,16.432,33.166,18.301,35.605L31.995,63.996z M17.862,23.162c0-7.771,6.342-14.094,14.138-14.094   s14.138,6.323,14.138,14.094S39.796,37.256,32,37.256S17.862,30.934,17.862,23.162z"/></g></svg>
+                            <div class="contacts-wrap">
+                                <span>г. Ульяновск</span><br>
+                                пр-т Ульяновский, д 13, 432072  <br>
+                                ИНН: 7328096514
+                            </div>
+                        </div>
+                        <div class="header-phone">
+                            <?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="477.156px" height="477.156px" viewBox="0 0 477.156 477.156" style="enable-background:new 0 0 477.156 477.156;"xml:space="preserve"><g><path d="M475.009,380.316l-2.375-7.156c-5.625-16.719-24.062-34.156-41-38.75l-62.688-17.125c-17-4.625-41.25,1.594-53.688,14.031l-22.688,22.688c-82.453-22.28-147.109-86.938-169.359-169.375L145.9,161.94c12.438-12.438,18.656-36.656,14.031-53.656l-17.094-62.719c-4.625-16.969-22.094-35.406-38.781-40.969L96.9,2.19c-16.719-5.563-40.563,0.063-53,12.5L9.962,48.659C3.899,54.69,0.024,71.94,0.024,72.003c-1.187,107.75,41.063,211.562,117.281,287.781c76.031,76.031,179.454,118.219,286.891,117.313c0.562,0,18.312-3.813,24.375-9.845l33.938-33.938C474.946,420.878,480.571,397.035,475.009,380.316z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+                            <div class="phone-wrap">
+                                <span><a class="phone" href="tel:+79372711122">+7 (937) 271-11-22</a></span><br>
+                                Звоните с 09:00 до 22:00 <br> (Бесплатно по России)
+                            </div>
                         </div>
                     </div>
-                    <div class="header-phone">
-                        <?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="477.156px" height="477.156px" viewBox="0 0 477.156 477.156" style="enable-background:new 0 0 477.156 477.156;"xml:space="preserve"><g><path d="M475.009,380.316l-2.375-7.156c-5.625-16.719-24.062-34.156-41-38.75l-62.688-17.125c-17-4.625-41.25,1.594-53.688,14.031l-22.688,22.688c-82.453-22.28-147.109-86.938-169.359-169.375L145.9,161.94c12.438-12.438,18.656-36.656,14.031-53.656l-17.094-62.719c-4.625-16.969-22.094-35.406-38.781-40.969L96.9,2.19c-16.719-5.563-40.563,0.063-53,12.5L9.962,48.659C3.899,54.69,0.024,71.94,0.024,72.003c-1.187,107.75,41.063,211.562,117.281,287.781c76.031,76.031,179.454,118.219,286.891,117.313c0.562,0,18.312-3.813,24.375-9.845l33.938-33.938C474.946,420.878,480.571,397.035,475.009,380.316z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
-                        <div class="phone-wrap">
-                            <span><a class="phone" href="tel:+79372711122">+7 (937) 271-11-22</a></span><br>
-                            Звоните с 09:00 до 22:00 <br> (Бесплатно по России)
+                </div>
+            </div>
+        </section>
+        <div class="middle-section">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer-wrapper-main">
+        <div class="footer-wrapper">
+            <div class="container">
+                <div class="footer">
+                    <div class="footer-element">
+                        <div class="logo-wrap">
+                            <a href="{% url 'main:main' %}" class="logo-img-wrap">
+                                <!img alt="img" src="{% static 'orientir_main/images/logo.webp' %}"/>
+                            </a>
+                            <a href="{% url 'main:main' %}" class="name-company">
+                                <span>Центр Ориентир</span><br>
+                                Soft-skills
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-element visible-lg visible-md">
+                        <h5 class="none">Меню</h5>
+                        <hr class="none">
+                        <nav class="footer-menu">
+                            <ul>
+                                <li>
+                                    <a href="{% url 'main:main' %}">Главная</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'main:about' %}">Об организации</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'main:projects' %}">Проекты</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'main:galleries' %}">Портфолио</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'main:news' %}">Новости</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'main:contact' %}">Контакты</a>
+                                </li>
+        
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="footer-element">
+                        <h5 class="hidden-xs none">Контакты</h5>
+                        <hr class="hidden-xs none">
+                        <div class="contacts-wrapper">
+                            <p class="adress"><i class="fa fa-map-marker" aria-hidden="true"></i> г. Ульяновск пр-т Ульяновский, д 13, 432072  <br> ИНН: 7328096514 </p>
+                            <a href="tel:+79372711122" class="phone"> <i class="fa fa-phone" aria-hidden="true"></i> +7 (937) 271-11-22</a>
+                            <a href="mailto:is_orientir@mail.ru" class="email"><i class="fa fa-envelope" aria-hidden="true"></i>is_orientir@mail.ru</a>
+                        </div>
+                    </div>
+                    <div class="footer-element footer-end none">
+                        <a href="" class="callback button none">Заказать звонок</a>
+                        <p class="none">Остались вопросы? Закажите звонок и мы <br> позвонимв удобное для Вас время</p>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-bar">
+            <div class="container">
+                <div class="footer-bottom-bar-inner">
+                    <a href="{% url 'main:main' %}">Ориентир</a>
+                    <div class="footer-bottom-bar-inner-end">
+                        <div>Сайт разработан <a href="https://telegram.me/revengel66">revengel</a> и <a href="https://telegram.me/acidmikk">acidmikk</a></div>
+                        <div class="push10"></div>
+                        <div class="social">
+                            <!--a href="#" class="fcb"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="vk"><i class="fa fa-vk"></i></a-->
+                            <a href="{% url 'main:rss' %}" class="rss"><i class="fa fa-rss"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <div class="middle-section">
-		{% block content %}{% endblock %}
     </div>
 </div>
-<!-- Footer -->
-<div class="footer-wrapper">
-    <div class="container">
-        <div class="footer">
-            <div class="footer-element">
-                <div class="logo-wrap">
-                    <a href="{% url 'main:main' %}" class="logo-img-wrap">
-                        <!img alt="img" src="{% static 'orientir_main/images/logo.webp' %}"/>
-                    </a>
-                    <div class="name-company">
-                        <span>Центр Ориентир</span><br>
-                        Soft-skills
-                    </div>
-                </div>
-            </div>
-            <div class="footer-element visible-lg visible-md">
-                <h5 class="none">Меню</h5>
-                <hr class="none">
-                <nav class="footer-menu">
-                    <ul>
-                        <li>
-                            <a href="{% url 'main:main' %}">Главная</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'main:about' %}">Об организации</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'main:projects' %}">Проекты</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'main:galleries' %}">Портфолио</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'main:news' %}">Новости</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'main:contact' %}">Контакты</a>
-                        </li>
 
-                    </ul>
-                </nav>
-            </div>
-            <div class="footer-element">
-                <h5 class="hidden-xs none">Контакты</h5>
-                <hr class="hidden-xs none">
-                <div class="contacts-wrapper">
-                    <p class="adress"><i class="fa fa-map-marker" aria-hidden="true"></i> г. Ульяновск пр-т Ульяновский, д 13, 432072  <br> ИНН: 7328096514 </p>
-            		<a href="tel:+79372711122" class="phone"> <i class="fa fa-phone" aria-hidden="true"></i> +7 (937) 271-11-22</a>
-            		<a href="mailto:is_orientir@mail.ru" class="email"><i class="fa fa-envelope" aria-hidden="true"></i>is_orientir@mail.ru</a>
-                </div>
-            </div>
-            <div class="footer-element footer-end none">
-                <a href="" class="callback button none">Заказать звонок</a>
-                <p class="none">Остались вопросы? Закажите звонок и мы <br> позвонимв удобное для Вас время</p>
-            </div>
 
-        </div>
-    </div>
-</div>
-<div class="footer-bottom-bar">
-    <div class="container">
-        <div class="footer-bottom-bar-inner">
-            <a href="{% url 'main:main' %}">Ориентир</a>
-            <div class="footer-bottom-bar-inner-end">
-	            <div>Сайт разработан <a href="https://telegram.me/revengel66">revengel</a> и <a href="https://telegram.me/acidmikk">acidmikk</a></div>
-	            <div class="push10"></div>
-	            <div class="social">
-	                <!--a href="#" class="fcb"><i class="fa fa-facebook"></i></a>
-	                <a href="#" class="vk"><i class="fa fa-vk"></i></a-->
-                    <a href="{% url 'main:rss' %}" class="rss"><i class="fa fa-rss"></i></a>
-	            </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- /. Footer -->
 
     <!-- * * * * * * Callback modal block * * * * * * -->
