@@ -59,7 +59,7 @@ class People(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('main:expert', kwargs={'id': self.id})
+        return reverse('main:person', kwargs={'id': self.id})
 
     class Meta:
         verbose_name_plural = 'Люди'
