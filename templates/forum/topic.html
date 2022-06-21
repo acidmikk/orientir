@@ -1,0 +1,79 @@
+{% extends "orientir_main/layout/base.html" %}
+{% load static %}
+{% block title %}Ориентир | {{ title }}{% endblock %}
+{% block content %}
+<section class="project-section forum-section discussion-section">
+    <hr>
+    <div class="push40"></div>
+	<div class="container">
+		<div class="project-wrapper">
+			<div class="content">
+				<div class="project-header">
+					<div class="header-title">
+						<h1>{{ title }}</h1>
+						<div class="push10"></div>
+						<div class="push25"></div>
+					</div>
+				</div>
+				<div class="section-content">
+					<div class="title-wrapp">
+						<div class="project-subtitle">
+							<p>{{ subtitle|safe }}</p>
+						</div>
+						<div class="item-bottom">
+							<div class="date" id="answer">23.04.22</div>
+						</div>
+					</div>
+				</div>
+				<div class="push30"></div>
+                <!форама>
+                {% if request.user.is_authenticated %}
+				<section class="discassion-wrapper">
+					<div class="comment">
+						<div class="form-group">
+							<textarea class="form-control" name="message" placeholder="Введите сообщение..."></textarea>
+							<div class="discassion-button-wrap">
+								<input type="submit" class="button btn" value="Добавить комментарий" />
+							</div>
+						</div>
+					</div>
+				</section>
+                {% endif %}
+                <div class="push50"></div>
+				<div class="section-item-wrapper">
+                {% for post in posts %}
+                    <div class="section-item">
+                        <div class="title-wrap">
+							<div class="diss-header">
+								<div class="diss-header-left">
+									<h3>{{ post.created_by }}</h3>
+									<div class="date">{{ post.created_at|date:"d.m.Y G:i" }}</div>
+								</div>
+								<!--div class="diss-header-right">
+									<a>
+										<i class="fa fa-pencil" aria-hidden="true"></i>
+									</a>
+									<a>
+										<i class="fa fa-trash-o" aria-hidden="true"></i>
+									</a>
+								</div-->
+							</div>
+                            <div class="project-subtitle">
+								{{ post.message }}
+                            </div>
+							<!--a href="#answer" class="answer">
+								Ответить
+							</a-->
+                        </div>
+					</div>
+                {% empty %}
+
+                {% endfor %}
+				</div>
+				{% include 'orientir_main/pagination.html' %}
+                <div class="push50"></div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

@@ -14,7 +14,7 @@ urlpatterns = [
         path('', ProjectsList.as_view(), name='projects'),
     ])),
     path('about-us/', include([
-        path('people/people_<int:id>', person, name='expert'),
+        path('people/people_<int:id>', person, name='person'),
         path('people/', workers, name='structure'),
         path('', about, name='about'),
     ])),
@@ -28,7 +28,6 @@ urlpatterns = [
         path('logout/', logout_user, name='logout'),
         path('<str:username>', profile, name='profile')
     ])),
-    path('structure/',  workers, name='structure'),
     path('search/', SearchList.as_view(), name='search'),
     path('contact/', contact_view, name='contact'),
     path('lastnews/', LatestFeedRSS(), name='rss'),

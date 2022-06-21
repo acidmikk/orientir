@@ -110,8 +110,6 @@ class PhotoAlbum(admin.ModelAdmin):
 class AboutAdminForm(forms.ModelForm):
     content1 = forms.CharField(label='Текст новости', widget=CKEditorUploadingWidget(), max_length=3000)
     content2 = forms.CharField(label='Текст новости', widget=CKEditorUploadingWidget(), max_length=3000)
-    content3 = forms.CharField(label='Текст новости', widget=CKEditorUploadingWidget(), max_length=3000)
-    history = forms.CharField(label='Текст истории', widget=CKEditorUploadingWidget(), max_length=3000)
 
     class Meta:
         model = About
@@ -120,7 +118,7 @@ class AboutAdminForm(forms.ModelForm):
 
 @admin.register(About)
 class AboutAdmin(admin.ModelAdmin):
-    list_display = ('history', 'content1', 'content2', 'content3')
+    list_display = ('content1', 'content2')
     list_display_links = ()
     form = AboutAdminForm
 

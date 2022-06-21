@@ -116,14 +116,9 @@ class Photo(models.Model):
 
 
 class About(models.Model):
-    history = models.TextField(verbose_name='История фонда')
     content1 = models.TextField(verbose_name='Текст 1 блока')
     image1 = models.ImageField(verbose_name='Картинка 1', upload_to='about/%Y/%m/%d/', null=False, blank=False)
     content2 = models.TextField(verbose_name='Текст 2 блока')
-    image2_1 = models.ImageField(verbose_name='Картинка 2_1', upload_to='about/%Y/%m/%d/', null=False, blank=False)
-    image2_2 = models.ImageField(verbose_name='Картинка 2_1', upload_to='about/%Y/%m/%d/', null=False, blank=False)
-    content3 = models.TextField(verbose_name='Текст 3 блока')
-    image3 = models.ImageField(verbose_name='Картинка 3', upload_to='about/%Y/%m/%d/', null=False, blank=False)
 
     class Meta:
         verbose_name_plural = 'Инфо без раздела'

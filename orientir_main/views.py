@@ -1,6 +1,7 @@
 from itertools import chain
 
 from django.contrib.auth import logout, login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -8,7 +9,6 @@ from django.core.mail import send_mail
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView
 from django.conf import settings
-from django.contrib.auth.models import User
 
 from .models import *
 from .forms import ContactForm
@@ -170,7 +170,7 @@ class RegisterUser(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('home')
+        return redirect('main:main')
 
 
 class LoginUser(LoginView):
@@ -182,13 +182,14 @@ class LoginUser(LoginView):
         return dict(list(context.items()))
 
     def get_success_url(self):
-        return reverse_lazy('main')
+        return reverse_lazy('main:main')
 
 
 def logout_user(request):
     logout(request)
-    return redirect('login')
+    return redirect('main:login')
 
 
+@login_required
 def profile(request, username):
     return render(request, 'orientir_main/lk.html', {'user': User.objects.get(username=username)})
