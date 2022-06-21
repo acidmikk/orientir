@@ -10,14 +10,14 @@
 			<div class="news-header-inner">
 				<div class="sub">Будьте в курсе событий!</div>
 				<h2>Новости</h2>
-				<div class="push10"></div>
-					<!--div class="header-search">
+				<!--div class="push10"></div>
+					<div class="header-search">
 						<form data-key="" action="" method="get" id="" name="search">
 							<input type="text" placeholder="Поиск по новостям" name="" value="" />
 							<input type="submit" />
 						</form>
-					</div-->
-					<div class="push25"></div>
+					</div>
+					<div class="push25"></div-->
 			</div>
 		</div>
 		<div class="push20"></div>
@@ -40,13 +40,13 @@
 					<div class="news-text-inner">
 						<div class="news-inner">
 							<div class="news-title">
-								{{ new.title }}
+								{{ new.title|truncatechars:60}}
 							</div>
 							<a class="" href="{% url 'main:new' new.slug %}">Читать далее <span>>></span></a>
 						</div>
 						<div class="annotation">
 							<div class="padding"></div>
-							{{ new.mini_content }}
+							{{ new.mini_content|truncatechars:120 }}
 						</div>
 					</div>
 				</div>

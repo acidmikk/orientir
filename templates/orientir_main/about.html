@@ -4,23 +4,23 @@
 {% block content %}
 <hr>
 <div class="push30"></div>
-    <section class="about-part about-part-one">
-        <div class="container">
-            <div class="about-part-inner">
-                <div>
-                    <h1>Об организации</h1>
-                </div>
-                {% if about.content1 %}
-                <div class="content">
-                    <div class="about-image">
-                        <img src="{{ about.image1.url }}" alt=""> <!--Картинка для первой секции страницы-->
-                    </div>
-                    {{ about.content1 | safe }} 
-                </div>
-                {% endif %}
+<section class="about-part about-part-one">
+    <div class="container">
+        <div class="about-part-inner">
+            <div>
+                <h1>Об организации</h1>
             </div>
+            {% if about.content1 %}
+            <div class="content">
+                {{ about.content1 | safe }} 
+            </div>
+            <div class="about-image">
+                <img src="{{ about.image1.url }}" alt=""> <!--Картинка для первой секции страницы-->
+            </div>
+            {% endif %}
         </div>
-    </section>
+    </div>
+</section>
 <div class="participant-page">
     <section class="participant-section">
         <div class="push50"></div>
@@ -38,23 +38,124 @@
                             Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
                         </p>
                     </div>
-                    <div class="push50"></div>
                 </div>
                 <div class="prize-wrap hidden-xs">
                     <!--=======================Participants item begin=======================-->
-                    {% for picture in gallery %}
                     <div class="gallery-element">
-                        <a href="{{ picture.image.url }}" class="fancybox" data-fancybox-group="gallery"> <!Превью изображение->
-                            <img src="{{ picture.image.url }}"> <!Большое изображение>
+                        <a href="{% static 'orientir_main/files/f1.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f1.png' %}" alt=""> <!--Большое изображение-->
                             <div class="zoom-gallery">
                                 <i class="fa fa-search-plus" aria-hidden="true"></i>
                             </div>
                         </a>
                     </div>
-				    {% endfor %}
                     <div class="gallery-element">
-                        <a href="{% static 'orientir_main/images/prize-1.png' %}" class="fancybox" data-fancybox-group="gallery"> <!--Превью изображение-->
-                            <img src="{% static 'orientir_main/images/prize-1.png' %}" alt=""> <!--Большое изображение-->
+                        <a href="{% static 'orientir_main/images/gr/prize-1.png' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/prize-1.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/images/gr/prize-2.jpg' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/prize-2.jpg' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/images/gr/prize-3.jpg' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/prize-3.jpg' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/images/gr/prize-4.jpg' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/prize-4.jpg' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f2.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f2.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f3.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f3.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f4.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f4.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f5.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f5.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f6.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f6.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f7.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f7.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f8.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f8.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f9.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f9.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f10.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f10.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f11.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f11.png' %}" alt=""> <!--Большое изображение-->
                             <div class="zoom-gallery">
                                 <i class="fa fa-search-plus" aria-hidden="true"></i>
                             </div>
@@ -66,7 +167,126 @@
                 </div>
                 <div class="prize-wrap-slider visible-xs">
                     <!--=======================Participants item begin=======================-->
-                  
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f1.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f1.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/images/gr/prize-1.png' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/prize-1.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/images/gr/prize-2.jpg' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/prize-2.jpg' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/images/gr/prize-3.jpg' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/prize-3.jpg' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/images/gr/prize-4.jpg' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/prize-4.jpg' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f2.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f2.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f3.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f3.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f4.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f4.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f5.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f5.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f6.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f6.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f7.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f7.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f8.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f8.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f9.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f9.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f10.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f10.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-element">
+                        <a href="{% static 'orientir_main/files/f11.pdf' %}" target="_blank"> <!--Превью изображение-->
+                            <img src="{% static 'orientir_main/images/gr/f11.png' %}" alt=""> <!--Большое изображение-->
+                            <div class="zoom-gallery">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
                     <!--=======================Participants item end=======================-->
                 </div>
             </div>

@@ -53,7 +53,7 @@ $(function(){
     	autoplay: true,
     	swipeToSlide: true,
     	adaptiveHeight: true,
-    	autoplaySpeed: 6000,
+    	autoplaySpeed: 2000,
         responsive: [
 		     {
 		       breakpoint: 700,
@@ -69,11 +69,17 @@ $(function(){
         dots: false,
         infinite: true,
         speed: 300,
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
         autoplay: true,
         adaptiveHeight: true,
-        autoplaySpeed: 2000
+        autoplaySpeed: 2000,
+        responsive: [
+             {
+                breakpoint: 550,
+                settings: { slidesToShow: 1 },
+            }
+		  ]
       });
       
 	// fancybox

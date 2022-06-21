@@ -12,13 +12,13 @@ class BoardsView(ListView):
     model = Board
     queryset = Board.objects.all()
     template_name = 'forum/home.html'
-    paginate_by = 1
+    paginate_by = 12
     context_object_name = 'boards'
 
 
 class TopicsView(ListView):
     template_name = 'forum/board.html'
-    paginate_by = 2
+    paginate_by = 12
     context_object_name = 'topics'
 
     def get_context_data(self, *, object_list=None, **kwargs):
