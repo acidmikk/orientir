@@ -35,7 +35,7 @@ class TopicsView(ListView):
 
 class TopicView(ListView):
     template_name = 'forum/topic.html'
-    paginate_by = 2
+    paginate_by = 12
     context_object_name = 'posts'
 
     def get_context_data(self, *, object_list=None, **kwargs):
