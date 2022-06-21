@@ -175,27 +175,29 @@
 			<div class="participant-slider">
 				<!--=======================Participants item begin=======================-->
 				{% for expert in experts %}
-					<a href="{{ expert.get_absolute_url }}" class="experts-item">
-						<div class="expert-inner">
-							<div class="image-wrapper">
-								{% if expert.avatar %}
-                                    <img src="{{ expert.avatar.url }}" alt="expert"/>
-                                {% else %}
-                                    <img src="{% static 'orientir_main/images/empty.png' %}" alt="expert">
-                                {% endif %}
-							</div>
-							<div class="experts-text">
-								<div class="title-wrapper">
-									{{ expert.title }}
-								</div>
-								<div class="push10"></div>
-								<div class="description-wrapper">
-									{{ expert.content }}
-								</div>
-							</div>
-						</div>
-					</a>
-                {% endfor %}
+				<div class="experts-item">
+				 <a class="link-block" href="{{ expert.get_absolute_url }}"></a>
+				 <div class="expert-inner">
+					 <div class="image-wrapper">
+						 {% if expert.avatar %}
+							 <img src="{{ expert.avatar.url }}" alt="expert"/>
+						 {% else %}
+							 <img src="{% static 'orientir_main/images/empty.png' %}" alt="expert">
+						 {% endif %}
+					 </div>
+					 <div class="experts-text">
+						 <div class="title-wrapper">
+							 {{ expert.title }}
+						 </div>
+						 <div class="push10"></div>
+						 <div class="description-wrapper">
+							 {{ expert.content }}
+						 </div>
+					 </div>
+				 </div>
+			 </div>
+			 {% endfor %}
+
 				<!--=======================Participants item end=======================-->
 			</div>
 			<div class="button-wrap hidden-lg hidden-md">

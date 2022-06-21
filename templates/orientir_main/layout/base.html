@@ -18,9 +18,9 @@
 <body class="base-template">
 
 <div class="menu-button hidden-md hidden-lg">
-        <span class="icon-menu-burger">
-            <span class="icon-menu-burger__line"></span>
-        </span>
+    <span class="icon-menu-burger">
+        <span class="icon-menu-burger__line"></span>
+    </span>
 </div>
 
 
@@ -50,7 +50,7 @@
                 <a href="{% url 'main:structure' %}">Состав</a>
             </li>
             <li>
-                <a href="{% url 'main:galleries' %}">Портфолио</a>
+                <a href="{% url 'main:galleries' %}">Галерея</a>
             </li>
             <li>
                 <a href="{% url 'main:news' %}">Новости</a>
@@ -58,6 +58,10 @@
             <li>
                 <a href="{% url 'main:contact' %}">Контакты</a>
             </li>
+            <li>
+                <a href="{% url 'forum:boards' %}">Диалоговая антикоррупционная площадка</a>
+            </li>
+
         </ul>
     </div>
     <div class="push30"></div>
@@ -229,13 +233,19 @@
                                     <a href="{% url 'main:projects' %}">Проекты</a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'main:galleries' %}">Портфолио</a>
+                                    <a href="{% url 'main:structure' %}">Состав</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'main:galleries' %}">Галерея</a>
                                 </li>
                                 <li>
                                     <a href="{% url 'main:news' %}">Новости</a>
                                 </li>
                                 <li>
                                     <a href="{% url 'main:contact' %}">Контакты</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'forum:boards' %}">Форум</a>
                                 </li>
         
                             </ul>
