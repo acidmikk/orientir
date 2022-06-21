@@ -44,6 +44,9 @@ class TopicView(ListView):
         context['title'] = topic.subject
         context['subtitle'] = topic.subtitle
         context['date'] = topic.last_update
+        context['board_slug'] = self.kwargs['board_slug']
+        context['topic_slug'] = self.kwargs['slug']
+        context['form'] = PostForm()
         return context
 
     def get_queryset(self):
@@ -73,8 +76,8 @@ class TopicView(ListView):
 
 
 @login_required
-def reply_topic(request, board_slug, slug):
-    topic = get_object_or_404(Topic, board__slug=board_slug, slug=slug)
+def reply_topic(request, board_slug, topic_slug):
+    topic = get_object_or_404(Topic, slug=topic_slug)
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
@@ -82,7 +85,4 @@ def reply_topic(request, board_slug, slug):
             post.topic = topic
             post.created_by = request.user
             post.save()
-            return redirect('topic_posts', pk=board_slug, topic_pk=slug)
-    else:
-        form = PostForm()
-    return render(request, 'reply_topic.html', {'topic': topic, 'form': form})
+            return redirect('forum:topic_posts', board_slug=board_slug, slug=topic_slug)

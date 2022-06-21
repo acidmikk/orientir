@@ -28,16 +28,18 @@
 				<div class="push30"></div>
                 <!форама>
                 {% if request.user.is_authenticated %}
-				<section class="discassion-wrapper">
+				<form class="discassion-wrapper" method="post" action="{% url 'forum:reply_topic' board_slug topic_slug %}">
 					<div class="comment">
 						<div class="form-group">
-							<textarea class="form-control" name="message" placeholder="Введите сообщение..."></textarea>
+                            {% csrf_token %}
+							<!--textarea class="form-control" name="message" placeholder="Введите сообщение..."></textarea-->
+                            {{ form.as_p}}
 							<div class="discassion-button-wrap">
 								<input type="submit" class="button btn" value="Добавить комментарий" />
 							</div>
 						</div>
 					</div>
-				</section>
+				</form>
                 {% endif %}
                 <div class="push50"></div>
 				<div class="section-item-wrapper">

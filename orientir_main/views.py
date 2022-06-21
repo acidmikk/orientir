@@ -161,7 +161,7 @@ def user_info(request):
 class RegisterUser(CreateView):
     form_class = RegisterUserForm
     template_name = 'orientir_main/registration.html'
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('main:login')
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
