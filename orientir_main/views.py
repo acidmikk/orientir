@@ -19,7 +19,7 @@ class NewsList(ListView):
     queryset = News.objects.all()
     context_object_name = 'news'
     template_name = 'orientir_main/news.html'
-    paginate_by = 12
+    paginate_by = 2
 
 
 def new(request, slug):
