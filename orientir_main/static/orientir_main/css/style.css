@@ -948,7 +948,7 @@ width: 100%;
     text-align: right;
     flex-basis: 100%;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     position: relative;
 }
 .project-wrapper .content:after{
@@ -997,9 +997,6 @@ width: 100%;
 .section-item{
     border-radius: 15px;
     display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: center;
     flex-basis: 45%;
     padding: 30px 80px 40px 45px;
     text-align: left;
@@ -1007,6 +1004,8 @@ width: 100%;
     background-image: url(../images/icons/project.png);
     background-repeat: no-repeat;
     background-position: 119% 145%;
+    align-items: flex-start;
+    align-content: space-between;
 }
 .section-item:hover{
     background-position: 101% 98%;
@@ -2834,7 +2833,8 @@ margin-bottom: 0;
 }
 .lk-section .content:after{
     bottom: 0;
-}
+/***********************login********************./*/
+/************************login******************./*/
 /**************************************************   MEDIA QUERIS   *****************************************************/
 
 @media (min-width: 992px) and (max-width: 1299px){
