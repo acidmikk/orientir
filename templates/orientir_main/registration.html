@@ -2,17 +2,30 @@
 {% load static %}
 {% block title %}Ориентир | Регистрация{% endblock %}
 {% block content %}
+<div class="push20"></div>
+<div class="authorization">
     <div class="container" id="regist">
-        <h2>Регистрация</h2>
-        <br />
-        <div class="rf">
-            <form method="post" name="registration">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <div>
-                    <input type="submit" class="button btn" value="Зарегистрироваться" />
-                </div>
-            </form>
+        <div class="push50"></div>
+        <div class="auto-wrapper">
+            <div class="rf">
+                <form method="post" name="registration">
+                    <h2>Регистрация</h2>
+                    <div class="push30"></div>
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div>
+                        <input type="submit" class="button btn" value="Зарегистрироваться" />
+                    </div>
+                </form>
+            </div>
+            <div class="img-wrap-auto">
+                <img src="{% static 'orientir_main/images/auto-bg.png' %}">
+            </div>
         </div>
+        
+        <div class="push50"></div>
     </div>
+</div>
 {% endblock %}
+
+
