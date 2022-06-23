@@ -142,6 +142,7 @@ class SliderAdmin(admin.ModelAdmin):
 class LinksBagAdmin(admin.ModelAdmin):
     list_display = ('title', 'content')
     list_display_links = ('title', 'content')
+    prepopulated_fields = {'slug': ('title',)}
 
 
 @admin.register(Link)
