@@ -220,7 +220,10 @@ class LinksView(ListView):
         return Link.objects.filter(bag=self.bag)
 
 
-def videoteka(request):
-    vidiolinks = Link.objects.get(bag__slug='antikorrupcionnye-videoteki-dlya-uchashihsya')
-    context = {'links': vidiolinks}
-    return render(request, 'orientir_main/links.html', context)
+# def videoteka(request):
+#     vidiolinks = Link.objects.get(bag__slug='antikorrupcionnye-videoteki-dlya-uchashihsya')
+#     bag = LinksBag.objects.get(slug='antikorrupcionnye-videoteki-dlya-uchashihsya')
+#     context = {'links': vidiolinks,
+#                'title': bag.title,
+#                'content': bag.content}
+#     return render(request, 'orientir_main/links.html', context)

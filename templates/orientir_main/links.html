@@ -1,24 +1,22 @@
 
 {% extends "orientir_main/layout/base.html" %}
 {% load static %}
-{% block title %}Ориентир | {{ link.title }}{% endblock %}
+{% block title %}Ориентир | {{ title }}{% endblock %}
 {% block content %}
 <hr>
 <div class="push40"></div>
 <div class="container">
     <div class="content-wrapper">
-        <h2>{{ link.title }}</h2>
+        <h2>{{ title }}</h2>
         <div class="push50"></div>
         <div class="content-inner">
 
             {% for link in links %}
             <div class="item-wrapper">
                 <div class="row">
-                    <div class="col-xs-2 num hidden-xs"><h4>1.</h4></div>
                     <div class="col-xs-12 col-sm-10">
                         <div class="item-inner">
                             <div class="row">
-                                <div class="col-xs-3 num visible-xs"><h4>1.</h4></div>
                                 <div class="col-lg-9 col-sm-8 col-xs-9 item-content-inner ">
                                     {{ link.content }}
                                 </div>
