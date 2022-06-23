@@ -3,7 +3,7 @@ from itertools import chain
 from django.contrib.auth import logout, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.urls import reverse_lazy
@@ -193,3 +193,28 @@ def logout_user(request):
 @login_required
 def profile(request, username):
     return render(request, 'orientir_main/lk.html', {'user': User.objects.get(username=username)})
+
+
+class BagsView(ListView):
+    model = LinksBag
+    queryset = LinksBag.objects.all()
+    context_object_name = 'bags'
+    template_name = 'orientir_main/linksbag.html'
+
+
+class LinksViw(ListView):
+    model = Link
+    queryset = Link.objects.all()
+    context_object_name = 'links'
+    template_name = 'orientir_main/links.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        bag = LinksBag.objects.get(slug=self.kwargs['slug'])
+        context['title'] = bag.title
+        context['content'] = bag.content
+        return context
+
+    def get_queryset(self):
+        self.bag = get_object_or_404(LinksBag, slug=self.kwargs['slug'])
+        return Link.objects.filter(bag=self.bag)

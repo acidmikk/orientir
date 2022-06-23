@@ -10,6 +10,8 @@ urlpatterns = [
         path('', NewsList.as_view(), name='news'),
     ])),
     path('projects/', include([
+        path('portfolio_of_links/<slug:slug>', LinksViw, name='links'),
+        path('portfolio_of_links/', BagsView, name='linksbag'),
         path('<slug:slug>', project, name='project'),
         path('', ProjectsList.as_view(), name='projects'),
     ])),

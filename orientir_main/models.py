@@ -133,3 +133,26 @@ class Slider(models.Model):
     class Meta:
         verbose_name_plural = 'Фото на главной'
         verbose_name = 'фото'
+
+
+class LinksBag(models.Model):
+    title = models.CharField(max_length=120, verbose_name='Название')
+    content = models.TextField(verbose_name='Текст')
+    slug = models.SlugField(max_length=130, unique=True)
+
+    def get_absolute_url(self):
+        return reverse('', kwargs={'slug': self.slug})
+
+    class Meta:
+        verbose_name_plural = 'Портфель ссылок'
+        verbose_name = 'Портфель ссылок'
+
+
+class Link(models.Model):
+    content = models.TextField(verbose_name='Текст')
+    link = models.URLField(verbose_name='Ссылка', blank=False, null=False)
+    bag = models.ForeignKey(LinksBag, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural = 'Ссылки'
+        verbose_name = 'Ссылка'
