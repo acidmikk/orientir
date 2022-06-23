@@ -144,7 +144,7 @@ class LinksBag(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('', kwargs={'slug': self.slug})
+        return reverse('main:links', kwargs={'slug': self.slug})
 
     class Meta:
         verbose_name_plural = 'Портфель ссылок'
