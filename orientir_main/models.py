@@ -154,7 +154,7 @@ class LinksBag(models.Model):
 class Link(models.Model):
     content = models.TextField(verbose_name='Текст')
     link = models.URLField(verbose_name='Ссылка', blank=False, null=False)
-    bag = models.ForeignKey(LinksBag, on_delete=models.CASCADE)
+    bag = models.ForeignKey(LinksBag, on_delete=models.CASCADE, verbose_name='Портфель')
 
     class Meta:
         verbose_name_plural = 'Ссылки'
