@@ -138,6 +138,18 @@ class SliderAdmin(admin.ModelAdmin):
     image_img.allow_tags = True
 
 
+@admin.register(LinksBag)
+class LinksBagAdmin(admin.ModelAdmin):
+    list_display = ('title', 'content')
+    list_display_links = ('title', 'content')
+
+
+@admin.register(Link)
+class LinksAdmin(admin.ModelAdmin):
+    list_display = ('content', 'link', 'bag')
+    list_display_links = ('content', 'link')
+
+
 # @admin.register(Smi)
 # class SmiAdmin(admin.ModelAdmin):
 #     list_display = ('title', 'content', 'link', 'published')
