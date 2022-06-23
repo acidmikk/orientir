@@ -140,6 +140,9 @@ class LinksBag(models.Model):
     content = models.TextField(verbose_name='Текст')
     slug = models.SlugField(max_length=130, unique=True)
 
+    def __str__(self):
+        return self.title
+
     def get_absolute_url(self):
         return reverse('', kwargs={'slug': self.slug})
 
