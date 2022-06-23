@@ -202,7 +202,7 @@ class BagsView(ListView):
     template_name = 'orientir_main/linksbag.html'
 
 
-class LinksViw(ListView):
+class LinksView(ListView):
     model = Link
     queryset = Link.objects.all()
     context_object_name = 'links'
@@ -218,3 +218,9 @@ class LinksViw(ListView):
     def get_queryset(self):
         self.bag = get_object_or_404(LinksBag, slug=self.kwargs['slug'])
         return Link.objects.filter(bag=self.bag)
+
+
+def videoteka(request):
+    vidiolinks = Link.objects.get(bag__slug='antikorrupcionnye-videoteki-dlya-uchashihsya')
+    context = {'links': vidiolinks}
+    return render(request, 'orientir_main/links.html', context)
