@@ -1,13 +1,13 @@
 
 {% extends "orientir_main/layout/base.html" %}
 {% load static %}
-{% block title %}Ориентир | Видеотека{% endblock %}
+{% block title %}Ориентир | {{ link.title }}{% endblock %}
 {% block content %}
 <hr>
 <div class="push40"></div>
 <div class="container">
     <div class="content-wrapper">
-        <h2>Видеотека</h2>
+        <h2>{{ link.title }}</h2>
         <div class="push50"></div>
         <div class="content-inner">
 
@@ -32,191 +32,6 @@
                 </div>
             </div>
             {% endfor %} 
-
-            <!--div class="item-wrapper">
-                <div class="row">
-                    <div class="col-xs-2 num hidden-xs"><h4>1.</h4></div>
-                    <div class="col-xs-12 col-sm-10">
-                        <div class="item-inner">
-                            <div class="row">
-                                <div class="col-xs-3 num visible-xs"><h4>1.</h4></div>
-                                <div class="col-lg-9 col-sm-8 col-xs-9 item-content-inner ">
-                                    <p>Антикоррупционная видеотека Департамента противодействия коррупции и контроля Свердловской области. Содержатся небольшие видеоролики (11 шт.) отражающие проблемные вопросы противодействия коррупции.</p>
-                                </div>
-                                <hr class="visible-xs hr-link-page">
-                                <div class="col-lg-3 col-sm-4 col-xs-12">
-                                    <a href="https://anticorruption.midural.ru/article/show/id/1206" target="_blank">Смотреть</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item-wrapper">
-                <div class="row">
-                    <div class="col-xs-2 num hidden-xs"><h4>2.</h4></div>
-                    <div class="col-xs-12 col-sm-10">
-                        <div class="item-inner">
-                            <div class="row">
-                                <div class="col-xs-3 num visible-xs"><h4>2.</h4></div>
-                                <div class="col-lg-9 col-sm-8 col-xs-9 item-content-inner ">
-                                    <p>Департамент
-                                    противодействия коррупции и контроля Свердловской области
-                                    видеоролики победители конкурса "Вместе против коррупции!" (3 шт.)</p>
-                                </div>
-                                <hr class="visible-xs hr-link-page">
-                                <div class="col-lg-3 col-sm-4 col-xs-12">
-                                    <a href="https://anticorruption.midural.ru/article/show/id/1246" target="_blank">Смотреть</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item-wrapper">
-                <div class="row">
-                    <div class="col-xs-2 num hidden-xs"><h4>3.</h4></div>
-                    <div class="col-xs-12 col-sm-10">
-                        <div class="item-inner">
-                            <div class="row">
-                                <div class="col-xs-3 num visible-xs"><h4>3.</h4></div>
-                                <div class="col-lg-9 col-sm-8 col-xs-9 item-content-inner ">
-                                    <p>Антикоррупционная видеотека АНО ЭЦ
-                                    «Ориентир». Содержаться видеоматериалы по антикоррупционному
-                                    воспитанию учащихся, отражающие различные аспекты проявления
-                                    коррупции в обществе: (7 шт.)</p>
-                                </div>
-                                <hr class="visible-xs hr-link-page">
-                                <div class="col-lg-3 col-sm-4 col-xs-12">
-                                    <a href="https://www.youtube.com/channel/UC-iMEGZzBUvNkfwTW8bIv8w/videos?view=0&sort=dd&shelf_id=0" target="_blank">Смотреть</a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-9 col-sm-8 col-xs-9 item-content-inner ">
-                                    <p>Что такое коррупция? Основные понятия и ее элементы</p>
-                                </div>
-                                <hr class="visible-xs hr-link-page">
-                                <div class="col-lg-3 col-sm-4 col-xs-12">
-                                    <a href="https://www.youtube.com/watch?v=9_8gP_iAytM" target="_blank">Смотреть</a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-9 col-sm-8 col-xs-9 item-content-inner ">
-                                    <p>Коррупция в медицине, образовании и полиции</p>
-                                </div>
-                                <hr class="visible-xs hr-link-page">
-                                <div class="col-lg-3 col-sm-4 col-xs-12">
-                                    <a href="https://www.youtube.com/watch?v=RNKOc9xtVV0" target="_blank">Смотреть</a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-9 col-sm-8 col-xs-9 item-content-inner ">
-                                    <p>Как бороться с коррупцией</p>
-                                </div>
-                                <hr class="visible-xs hr-link-page">
-                                <div class="col-lg-3 col-sm-4 col-xs-12">
-                                    <a href="https://www.youtube.com/watch?v=yZX_slOnt3Y&t=18s">Смотреть</a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-9 col-sm-8 col-xs-9 item-content-inner ">
-                                    <p>Методы борьбы с коррупцией в России и за рубежом</p>
-                                </div>
-                                <hr class="visible-xs hr-link-page">
-                                <div class="col-lg-3 col-sm-4 col-xs-12">
-                                    <a href="https://www.youtube.com/watch?v=1BeL39I9YP8" target="_blank">Смотреть</a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-9 col-sm-8 col-xs-9 item-content-inner ">
-                                    <p>Коррупция в истории и литературе</p>
-                                </div>
-                                <hr class="visible-xs hr-link-page">
-                                <div class="col-lg-3 col-sm-4 col-xs-12">
-                                    <a href="https://www.youtube.com/watch?v=cU0nukH9qic" target="_blank">Смотреть</a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-9 col-sm-8 col-xs-9 item-content-inner ">
-                                    <p>Коррупция глазами студентов</p>
-                                </div>
-                                <hr class="visible-xs hr-link-page">
-                                <div class="col-lg-3 col-sm-4 col-xs-12">
-                                    <a href="https://www.youtube.com/watch?v=tFiPcDhdGAA" target="_blank">Смотреть</a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-9 col-sm-8 col-xs-9 item-content-inner ">
-                                    <p>Громкие антикоррупционные дела в России и за рубежом.</p>
-                                </div>
-                                <hr class="visible-xs hr-link-page">
-                                <div class="col-lg-3 col-sm-4 col-xs-12">
-                                    <a href="https://www.youtube.com/watch?v=9iAu58qCjng" target="_blank">Смотреть</a>
-                                </div>
-                            </div>
-    
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item-wrapper">
-                <div class="row">
-                    <div class="col-xs-2 num hidden-xs"><h4>4.</h4></div>
-                    <div class="col-xs-12 col-sm-10">
-                        <div class="item-inner">
-                            <div class="row">
-                                <div class="col-xs-3 num visible-xs"><h4>4.</h4></div>
-                                <div class="col-lg-9 col-sm-8 col-xs-9 item-content-inner ">
-                                    <p>Официальный сайт администрации города Радужный - содержится 5 видеороликов о противодействие коррупции.</p>
-                                </div>
-                                <hr class="visible-xs hr-link-page">
-                                <div class="col-lg-3 col-sm-4 col-xs-12">
-                                    <a href="https://www.admrad.ru/protivodejjstvie-korrupcii/%d0%b2%d0%b8%d0%b4%d0%b5%d0%be%d0%bc%d0%b0%d1%82%d0%b5%d1%80%d0%b8%d0%b0%d0%bb%d1%8b/" target="_blank">Смотреть</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item-wrapper">
-                <div class="row">
-                    <div class="col-xs-2 num hidden-xs"><h4>5.</h4></div>
-                    <div class="col-xs-12 col-sm-10">
-                        <div class="item-inner">
-                            <div class="row">
-                                <div class="col-xs-3 num visible-xs"><h4>5.</h4></div>
-                                <div class="col-lg-9 col-sm-8 col-xs-9 item-content-inner ">
-                                    <p>ГБОУ «РЕЧЕВОЙ ЦЕНТР» , 4 Видеоролика о противодействии коррупции</p>
-                                </div>
-                                <hr class="visible-xs hr-link-page">
-                                <div class="col-lg-3 col-sm-4 col-xs-12">
-                                    <a href="https://rc.uralschool.ru/?section_id=121" target="_blank">Смотреть</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item-wrapper">
-                <div class="row">
-                    <div class="col-xs-2 num hidden-xs"><h4>6.</h4></div>
-                    <div class="col-xs-12 col-sm-10">
-                        <div class="item-inner">
-                            <div class="row">
-                                <div class="col-xs-3 num visible-xs"><h4>6.</h4></div>
-                                <div class="col-lg-9 col-sm-8 col-xs-9 item-content-inner ">
-                                    <p>Министерство внутренних дел по республике Бурятия - Серия анимационных роликов антикоррупционной направленности (16 шт.)</p>
-                                </div>
-                                <hr class="visible-xs hr-link-page">
-                                <div class="col-lg-3 col-sm-4 col-xs-12">
-                                    <a href="https://03.мвд.рф/противодействие-коррупции/видеоролики" target="_blank">Смотреть</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div-->
         </div>
     </div>
     
