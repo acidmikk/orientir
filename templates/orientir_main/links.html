@@ -1,0 +1,52 @@
+
+{% extends "orientir_main/layout/base.html" %}
+{% load static %}
+{% block title %}Ориентир | Проекты{% endblock %}
+{% block content %}
+<section class="project-section">
+    <hr>
+    <div class="push40"></div>
+	<div class="container">
+		<div class="project-wrapper">
+			<div class="content">
+				<div class="project-header">
+					<div class="header-title">
+						<h2>Проекты</h2>
+						<div class="push10"></div>
+						<div class="header-search">
+							<form data-key="" action="" method="get" id="">
+								<input type="text" placeholder="Поиск по проектам" name="" value="" />
+								<input type="submit" />
+							</form>
+						</div>
+						<div class="push25"></div>
+					</div>
+					<div class="subtitle">
+						<p>
+							Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы. Внезапно, некоторые особенности внутренней политики освещают чрезвычайно интересные.
+						</p>
+					</div>
+				</div>
+				<div class="section-item-wrapper">
+					<!--=======================Project item begin (2 item for preview)=======================-->
+					{% for project in projects %}
+					<a href="{{ project.get_absolute_url }}" class="section-item">
+                        <div class="title-wrap">
+                            <h3>{{ project.title }}</h3>
+                            <div class="project-subtitle">
+								{{ project.subtitle }}
+							</div>
+							<div class="button">Подробнее</div>
+                        </div>
+					</a>
+                    {% endfor %}
+					<!--=======================Project item end=======================-->
+				</div>
+				{% include 'orientir_main/pagination.html' %}
+                <div class="push50"></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
