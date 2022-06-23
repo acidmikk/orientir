@@ -3824,6 +3824,9 @@ margin-bottom: 0;
     .bags-wrapper{
         grid-template-columns: 1fr ;
     }
+    .bags-wrap h2, .content-wrapper h2{
+        font-size: 30px;
+    }
 }
 @media (max-width: 700px) {
 	.participant-wrapper .experts-item{
@@ -4175,6 +4178,9 @@ margin-bottom: 0;
     }
     .bag-wrap {
         padding: 40px;
+    }
+    .bags-wrap h2, .content-wrapper h2{
+        font-size: 25px;
     }
 
 }
