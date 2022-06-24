@@ -18,7 +18,7 @@ class SearchManager(models.Manager):
 
 
 class News(models.Model):
-    title = models.CharField(max_length=75, verbose_name='Заголовок')
+    title = models.CharField(max_length=60, verbose_name='Заголовок')
     slug = models.SlugField(max_length=90, unique=True)
     content = models.TextField(verbose_name='Текст')
     mini_content = models.TextField(max_length=90, verbose_name='Аннотация')
@@ -41,7 +41,7 @@ class News(models.Model):
 
 class People(models.Model):
     title = models.CharField(max_length=250, verbose_name='Имя')
-    content = models.CharField(max_length=40, null=True, blank=True, verbose_name='Короткое описание')
+    content = models.CharField(max_length=120, null=True, blank=True, verbose_name='Короткое описание')
     description = models.TextField(verbose_name='Описание')
     avatar = models.ImageField(upload_to=f'person/%Y/%m/%d/', blank=True, null=True,
                                verbose_name='Фото человека')
@@ -126,8 +126,8 @@ class About(models.Model):
 
 
 class Slider(models.Model):
-    title = models.CharField(max_length=120, verbose_name='Основной текст')
-    content = models.TextField(verbose_name='Доп текст')
+    title = models.CharField(max_length=50, verbose_name='Основной текст')
+    content = models.TextField(verbose_name='Доп текст', max_length=111)
     image = models.ImageField(verbose_name='Картинка', upload_to='other/%Y/%m/%d/', null=False, blank=False)
 
     class Meta:
