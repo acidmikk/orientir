@@ -43,7 +43,7 @@ class News(models.Model):
     published = models.DateField(db_index=True, verbose_name='Дата публикации')
     image = models.ImageField(verbose_name='Заставка новости', upload_to=f'news/%Y/%m/%d/', null=True, blank=True)
     file = models.FileField(verbose_name='Файл презентации в pdf', upload_to=f'news/%Y/%m/%d/', null=True, blank=True)
-    album = models.ForeignKey(Album, on_delete=models.SET_NULL, null=True)
+    album = models.ForeignKey(Album, on_delete=models.SET_NULL, null=True, blank=True)
     objects = SearchManager()
 
     def __str__(self):

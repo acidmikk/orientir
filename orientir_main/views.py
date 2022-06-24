@@ -3,7 +3,7 @@ from itertools import chain
 from django.contrib.auth import logout, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.urls import reverse_lazy
@@ -19,14 +19,15 @@ class NewsList(ListView):
     queryset = News.objects.all()
     context_object_name = 'news'
     template_name = 'orientir_main/news.html'
-    paginate_by = 2
+    paginate_by = 12
 
 
 def new(request, slug):
     cur_new = News.objects.get(slug=slug)
-    album = Photo.objects.filter(album__slug=cur_new.album.slug)
-    context = {'new': cur_new,
-               'gallery': album}
+    context = {'new': cur_new}
+    if cur_new.album:
+        album = Photo.objects.filter(album__slug=cur_new.album.slug)
+        context['gallery'] = album
     return render(request, 'orientir_main/new.html', context)
 
 
