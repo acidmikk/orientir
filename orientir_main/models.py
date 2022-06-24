@@ -17,14 +17,33 @@ class SearchManager(models.Manager):
         return qs
 
 
+class Album(models.Model):
+    title = models.CharField(max_length=95, verbose_name='Заголовок')
+    image = models.ImageField(verbose_name='Фото', upload_to='album/%Y/%m/%d/', null=False, blank=False)
+    published = models.DateField(db_index=True, verbose_name='Дата публикации')
+    slug = models.SlugField(max_length=95, unique=True)
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('main:gallery', kwargs={'slug': self.slug})
+
+    class Meta:
+        verbose_name_plural = 'Альбомы'
+        verbose_name = 'Альбом'
+        ordering = ['-published']
+
+
 class News(models.Model):
-    title = models.CharField(max_length=60, verbose_name='Заголовок')
+    title = models.CharField(max_length=63, verbose_name='Заголовок')
     slug = models.SlugField(max_length=90, unique=True)
     content = models.TextField(verbose_name='Текст')
-    mini_content = models.TextField(max_length=90, verbose_name='Аннотация')
+    mini_content = models.TextField(max_length=120, verbose_name='Аннотация')
     published = models.DateField(db_index=True, verbose_name='Дата публикации')
     image = models.ImageField(verbose_name='Заставка новости', upload_to=f'news/%Y/%m/%d/', null=True, blank=True)
     file = models.FileField(verbose_name='Файл презентации в pdf', upload_to=f'news/%Y/%m/%d/', null=True, blank=True)
+    album = models.ForeignKey(Album, on_delete=models.SET_NULL, null=True)
     objects = SearchManager()
 
     def __str__(self):
@@ -84,24 +103,6 @@ class Project(models.Model):
     class Meta:
         verbose_name_plural = 'Проекты'
         verbose_name = 'Проект'
-        ordering = ['-published']
-
-
-class Album(models.Model):
-    title = models.CharField(max_length=95, verbose_name='Заголовок')
-    image = models.ImageField(verbose_name='Фото', upload_to='album/%Y/%m/%d/', null=False, blank=False)
-    published = models.DateField(db_index=True, verbose_name='Дата публикации')
-    slug = models.SlugField(max_length=95, unique=True)
-
-    def __str__(self):
-        return self.title
-
-    def get_absolute_url(self):
-        return reverse('main:gallery', kwargs={'slug': self.slug})
-
-    class Meta:
-        verbose_name_plural = 'Альбомы'
-        verbose_name = 'Альбом'
         ordering = ['-published']
 
 

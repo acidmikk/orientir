@@ -24,7 +24,9 @@ class NewsList(ListView):
 
 def new(request, slug):
     cur_new = News.objects.get(slug=slug)
-    context = {'new': cur_new}
+    album = Photo.objects.filter(album__slug=cur_new.album.slug)
+    context = {'new': cur_new,
+               'gallery': album}
     return render(request, 'orientir_main/new.html', context)
 
 
