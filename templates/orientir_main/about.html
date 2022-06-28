@@ -11,11 +11,13 @@
                 <h1>Об организации</h1>
             </div>
             {% if about.content1 %}
-            <div class="content">
-                {{ about.content1 | safe }} 
-            </div>
-            <div class="about-image">
-                <img src="{{ about.image1.url }}" alt=""> <!--Картинка для первой секции страницы-->
+            <div class="about-n">
+                <div class="content">
+                    {{ about.content1 | safe }} 
+                </div>
+                <div class="about-image">
+                    <img src="{{ about.image1.url }}" alt=""> <!--Картинка для первой секции страницы-->
+                </div>
             </div>
             {% endif %}
         </div>
@@ -34,9 +36,9 @@
                     <hr>
                     <div class="push30"></div>
                     <div class="subtitle">
-                        <!--p>
+                        <p>
                             Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
-                        </p-->
+                        </p>
                     </div>
                 </div>
                 <div class="prize-wrap hidden-xs">

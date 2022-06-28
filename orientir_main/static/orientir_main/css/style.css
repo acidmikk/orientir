@@ -1466,6 +1466,12 @@ width: 100%;
 .form-contact .button{
     margin: 0;
 }
+.form-body p:last-child{
+    display: flex;
+}
+.form-body p:last-child img{
+    margin-right: 20px;
+}
 .contacts-item-form{
     background: #ff5168;
     padding: 50px;
@@ -1476,14 +1482,15 @@ width: 100%;
     border: 1px solid #ff5168;
     padding: 10px 20px;
     font-size: 15px;
+    color:#000;
 }
 .form-contact .button{
     background: #12437c00;
     border: 1px solid #ffffff;
 }
 .form-contact .button:hover{
-	color:#000;
-	background:#fff;
+    color:#000;
+    background:#fff;
 }
 .form-header{
     font-size: 28px;
@@ -1863,6 +1870,14 @@ h1{
     z-index: 15;
     border: 1px solid #fff;
     margin-top: -100px;
+    max-width: 30%;
+    margin: auto 0 auto auto;
+    position: relative;
+}
+.about-n{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .about-part-two .about-image-wrapper{
     position: relative;

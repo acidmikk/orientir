@@ -14,9 +14,9 @@
 						<div class="push25"></div>
 					</div>
 					<div class="subtitle">
-						<!--p>
+						<p>
 							Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы. Внезапно, некоторые особенности внутренней политики освещают чрезвычайно интересные.
-						</p-->
+						</p>
 					</div>
 				</div>
 				<div class="gallery-wrapper">
@@ -30,7 +30,7 @@
 							{% endif %}
 						</div>
 						<div class="title-wrap">
-							{{ gallery.title }}
+							{{ gallery.title|truncatechars:90 }}
 						</div>
 					</a>
 					{% endfor %}
@@ -43,4 +43,3 @@
 </section>
 
 {% endblock %}
-

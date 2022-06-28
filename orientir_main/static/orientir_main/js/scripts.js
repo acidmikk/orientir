@@ -19,6 +19,21 @@ $(function(){
     $('.edit4').click(function(){
         $('.form4').toggleClass('none');
     });
+   $('.form-contact label').toggleClass('none');
+   var array = [];
+   $('.form-contact input').each(function(index, item){
+    array.push(item);
+   });
+   $('.form-contact textarea').each(function(index, item){
+    array.push(item);
+   });
+   array[1].setAttribute('placeholder', 'Ваш Email*');
+   array[2].setAttribute('placeholder', 'Ваше имя*');
+   array[5].setAttribute('placeholder', 'Введите сообщение...');
+   array[4].setAttribute('placeholder', 'Captcha');
+
+
+
 
     $('.mobile-menu ul > li').has('ul').addClass('down');
     $('.mobile-menu .down > ul').before('<span class="dropdown-button"></span>');    
