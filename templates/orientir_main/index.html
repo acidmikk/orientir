@@ -74,10 +74,10 @@
 						<div class="push25"></div>
 					</div>
 					<div class="subtitle">
-						<!--p>
-							Предприниматели в сети интернет, инициированные исключительно синтетически, своевременно верифицированы. Внезапно, некоторые особенности внутренней политики освещают чрезвычайно интересные.
-                        </p-->
-					</div>
+						Социально-ориентированные проекты имеют важнейшую и основополагающую в развитии и определении социально-значимых проблем как регионов, так и государства в целом.
+                        <br>
+                        Социально-ориентированный проект - определенная идея, оформленная в форме определенного комплекса мероприятий, который направлен на решение социально-значимых проблем местного общества, при этом проект не должен быть направлен на получение прибыли.
+                    </div>
 				</div>
 				<div class="section-item-wrapper">
 					<!--=======================Project item begin (2 item for preview)=======================-->
@@ -224,9 +224,9 @@
 		<div class="contacts-item contacts-item-form" id="form">
             <div class="form-header">Для вопросов и предложений</div>
 			<form method="post" class="form-contact form">
-              {% csrf_token %}
-                  <div class="form-body">
-                      <div class="form-group">
+                {% csrf_token %}
+                    <div class="form-body">
+                      <!--div class="form-group">
                           <input name="name" placeholder="Ваше имя*" type="text" class="text" required />
                       </div>
                       <div class="form-group">
@@ -234,11 +234,12 @@
                       </div>
                       <div class="form-group">
                         <textarea name="mess" placeholder="Введите сообщение..."></textarea>
-                      </div>
-                  </div>
-                  <div class="form-actions form-group ">
-                      <button type="submit" class="form-control btn btn-success button button-form" name="sendform">Отправить</button>
-                  </div>
+                      </div-->
+                        {{ form.as_p }}
+                    </div>
+                <div class="form-actions form-group ">
+                  <button type="submit" class="form-control btn btn-success button button-form" name="sendform">Отправить</button>
+                </div>
             </form>
         </div>
 		<div class="contacts-item contacts-item-phone">
